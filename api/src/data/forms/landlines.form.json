@@ -1,0 +1,85 @@
+{
+    "slug": "landlines",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex: Téléphone fixe sans fil Panasonic",
+            "required": true,
+            "maxLength": 120
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex: Panasonic, Gigaset, Cisco",
+            "required": false
+        },
+        {
+            "name": "phoneType",
+            "label": "Type de téléphone fixe",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Filaire",
+                "Sans fil (DECT)",
+                "Standard de bureau",
+                "Téléphone de conférence",
+                "Autre"
+            ]
+        },
+        {
+            "name": "features",
+            "label": "Caractéristiques",
+            "type": "checkbox",
+            "required": false,
+            "options": [
+                "Répondeur intégré",
+                "Afficheur du numéro",
+                "Plusieurs combinés",
+                "Conférence à plusieurs",
+                "Support VoIP",
+                "Sans fil / Wi-Fi",
+                "Autre"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Occasion"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 25000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoutez des détails : état, type, caractéristiques, compatibilité réseau, garantie, etc.",
+            "required": true
+        }
+    ]
+}

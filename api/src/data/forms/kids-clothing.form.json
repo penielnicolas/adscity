@@ -1,0 +1,128 @@
+{
+    "slug": "kids-clothing",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex : Robe fille 6 ans - état neuf",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "listingType",
+            "label": "Type d'annonce",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Vente",
+                "Échange",
+                "Don / Gratuit"
+            ]
+        },
+        {
+            "name": "clothingType",
+            "label": "Type de vêtement",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Robe",
+                "T-shirt",
+                "Pantalon",
+                "Short",
+                "Pull / Sweat",
+                "Veste / Manteau",
+                "Chaussures enfants",
+                "Autre"
+            ]
+        },
+        {
+            "name": "gender",
+            "label": "Pour",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Garçon",
+                "Fille",
+                "Unisexe"
+            ]
+        },
+        {
+            "name": "ageRange",
+            "label": "Âge",
+            "type": "select",
+            "required": true,
+            "options": [
+                "0 - 12 mois",
+                "1 - 3 ans",
+                "4 - 6 ans",
+                "7 - 10 ans",
+                "11 - 14 ans"
+            ]
+        },
+        {
+            "name": "size",
+            "label": "Taille (si applicable)",
+            "type": "text",
+            "placeholder": "Ex : 6 ans, 120 cm",
+            "required": false
+        },
+        {
+            "name": "material",
+            "label": "Matière",
+            "type": "text",
+            "placeholder": "Ex : Coton, Jean, Laine",
+            "required": false
+        },
+        {
+            "name": "deliveryAvailable",
+            "label": "Livraison disponible ?",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Oui",
+                "Non"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Neuf avec étiquette",
+                "Comme neuf",
+                "Bon état",
+                "Usagé"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 5000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoute des détails : âge conseillé, état, marque, etc.",
+            "required": true,
+            "minLength": 20
+        }
+    ]
+}

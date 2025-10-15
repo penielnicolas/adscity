@@ -1,0 +1,150 @@
+{
+    "slug": "decoration",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex : Vase en céramique moderne",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "listingType",
+            "label": "Type d'annonce",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Vente",
+                "Échange",
+                "Gratuit"
+            ]
+        },
+        {
+            "name": "decorationType",
+            "label": "Type de décoration",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Tableaux & Affiches",
+                "Miroirs",
+                "Tapis",
+                "Rideaux & Voilages",
+                "Vases",
+                "Statues & Sculptures",
+                "Horloges murales",
+                "Plantes & Pots",
+                "Bougies & Porte-bougies",
+                "Autre"
+            ]
+        },
+        {
+            "name": "material",
+            "label": "Matériau principal",
+            "type": "text",
+            "placeholder": "Ex : Bois, Verre, Métal",
+            "required": false
+        },
+        {
+            "name": "style",
+            "label": "Style",
+            "type": "select",
+            "required": false,
+            "options": [
+                "Moderne",
+                "Classique",
+                "Bohème",
+                "Vintage",
+                "Minimaliste",
+                "Industriel"
+            ]
+        },
+        {
+            "name": "dimensions",
+            "label": "Dimensions (cm)",
+            "type": "group",
+            "required": false,
+            "fields": [
+                {
+                    "name": "length",
+                    "label": "Longueur",
+                    "type": "number",
+                    "min": 0
+                },
+                {
+                    "name": "width",
+                    "label": "Largeur",
+                    "type": "number",
+                    "min": 0
+                },
+                {
+                    "name": "height",
+                    "label": "Hauteur",
+                    "type": "number",
+                    "min": 0
+                }
+            ]
+        },
+        {
+            "name": "handmade",
+            "label": "Fait main",
+            "type": "radio",
+            "required": false,
+            "options": [
+                "Oui",
+                "Non"
+            ]
+        },
+        {
+            "name": "deliveryAvailable",
+            "label": "Livraison disponible ?",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Oui",
+                "Non"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Comme neuf",
+                "Bon état",
+                "Usagé",
+                "Vintage / Ancien"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 15000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoute des détails sur le style, le matériau, l’état, etc.",
+            "required": true,
+            "minLength": 20
+        }
+    ]
+}

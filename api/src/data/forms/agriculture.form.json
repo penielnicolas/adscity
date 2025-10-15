@@ -1,0 +1,84 @@
+{
+    "slug": "agriculture",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l’annonce",
+            "type": "text",
+            "placeholder": "Ex : Semences de maïs hybride | Pulvérisateur agricole | Engrais NPK 15-15-15",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "supplyType",
+            "label": "Type de fourniture",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Semences",
+                "Engrais",
+                "Produits phytosanitaires",
+                "Outils agricoles",
+                "Équipements d’irrigation",
+                "Aliments pour animaux",
+                "Autre"
+            ]
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex : Syngenta, Bayer, Yara"
+        },
+        {
+            "name": "quantity",
+            "label": "Quantité / Conditionnement",
+            "type": "text",
+            "placeholder": "Ex : 50 kg, 25 L, 1000 unités"
+        },
+        {
+            "name": "delivery",
+            "label": "Options",
+            "type": "checkbox",
+            "options": [
+                "À récupérer sur place",
+                "Livraison disponible"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Occasion"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Fixe",
+                "Négociable",
+                "Sur devis"
+            ]
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "min": 0
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoutez des informations complémentaires : caractéristiques, usage recommandé, conditions de conservation, etc.",
+            "required": true,
+            "minLength": 50
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+{
+    "slug": "baby-care",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex : Poussette 3 en 1 Chicco",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "listingType",
+            "label": "Type d'annonce",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Vente",
+                "Échange",
+                "Don / Gratuit"
+            ]
+        },
+        {
+            "name": "equipmentType",
+            "label": "Type d’équipement",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Poussette",
+                "Siège auto",
+                "Lit bébé",
+                "Chaise haute",
+                "Porte-bébé",
+                "Babyphone",
+                "Autre"
+            ]
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex : Chicco, Graco, Bébé Confort",
+            "required": false
+        },
+        {
+            "name": "material",
+            "label": "Matière principale",
+            "type": "text",
+            "placeholder": "Ex : Plastique, Bois, Métal",
+            "required": false
+        },
+        {
+            "name": "ageRange",
+            "label": "Âge conseillé",
+            "type": "select",
+            "required": true,
+            "options": [
+                "0 - 12 mois",
+                "1 - 3 ans",
+                "4 ans et +"
+            ]
+        },
+        {
+            "name": "deliveryAvailable",
+            "label": "Livraison disponible ?",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Oui",
+                "Non"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Comme neuf",
+                "Bon état",
+                "Usagé"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 50000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoute des détails : état, âge conseillé, accessoires inclus, etc.",
+            "required": true,
+            "minLength": 20
+        }
+    ]
+}

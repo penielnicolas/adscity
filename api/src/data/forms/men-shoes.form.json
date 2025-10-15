@@ -1,0 +1,120 @@
+{
+    "slug": "men-shoes",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex: Baskets Nike Air Max taille 43, comme neuves",
+            "required": true,
+            "maxLength": 80
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex: Nike, Adidas, Timberland",
+            "required": false
+        },
+        {
+            "name": "shoeType",
+            "label": "Type de chaussure",
+            "type": "select",
+            "options": [
+                "Baskets",
+                "Chaussures habillées",
+                "Mocassins",
+                "Bottes",
+                "Sandales",
+                "Tongs",
+                "Chaussures de sport",
+                "Espadrilles",
+                "Autre"
+            ],
+            "required": true
+        },
+        {
+            "name": "size",
+            "label": "Pointure",
+            "type": "checkbox",
+            "options": [
+                "38",
+                "39",
+                "40",
+                "41",
+                "42",
+                "43",
+                "44",
+                "45",
+                "46",
+                "Autre"
+            ],
+            "required": true
+        },
+        {
+            "name": "color",
+            "label": "Couleur",
+            "type": "text",
+            "placeholder": "Ex: Noir, Blanc, Marron",
+            "required": false
+        },
+        {
+            "name": "material",
+            "label": "Matière",
+            "type": "text",
+            "placeholder": "Ex: Cuir, Daim, Synthétique",
+            "required": false
+        },
+        {
+            "name": "occasion",
+            "label": "Occasion",
+            "type": "select",
+            "options": [
+                "Casual",
+                "Sport",
+                "Travail",
+                "Cérémonie",
+                "Autre"
+            ],
+            "required": false
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "options": [
+                "Neuf avec boîte",
+                "Comme neuf",
+                "Bon état",
+                "Usé"
+            ],
+            "required": true
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 35000",
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "type": "textarea",
+            "placeholder": "Décrivez les chaussures (état, confort, style, etc.)",
+            "required": true,
+            "maxLength": 1000
+        }
+    ]
+}

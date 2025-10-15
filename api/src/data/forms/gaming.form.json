@@ -1,0 +1,109 @@
+{
+    "slug": "gaming",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex: PlayStation 5 + 2 manettes + FIFA 23",
+            "required": true,
+            "maxLength": 120
+        },
+        {
+            "name": "itemType",
+            "label": "Type d'article",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Console",
+                "Jeu vidéo",
+                "Accessoire",
+                "Pack complet"
+            ]
+        },
+        {
+            "name": "brand",
+            "label": "Marque / Plateforme",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Sony PlayStation",
+                "Microsoft Xbox",
+                "Nintendo",
+                "PC Gaming",
+                "Autre"
+            ]
+        },
+        {
+            "name": "model",
+            "label": "Modèle",
+            "type": "text",
+            "placeholder": "Ex: PS5 Standard, Xbox Series X, Switch OLED",
+            "required": false
+        },
+        {
+            "name": "storage",
+            "label": "Capacité de stockage",
+            "type": "select",
+            "required": false,
+            "options": [
+                "Non applicable",
+                "256 Go",
+                "512 Go",
+                "1 To",
+                "2 To"
+            ]
+        },
+        {
+            "name": "includedItems",
+            "label": "Éléments inclus",
+            "type": "checkbox",
+            "required": false,
+            "options":[
+                "Manettes",
+                "Jeux inclus",
+                "Casque audio",
+                "Casque VR",
+                "Câbles & alimentation",
+                "Autre"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Occasion"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 250000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoutez plus de détails : état de la console, durée d’utilisation, jeux inclus, accessoires fournis...",
+            "required": true
+        }
+    ]
+}

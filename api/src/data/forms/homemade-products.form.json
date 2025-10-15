@@ -1,0 +1,87 @@
+{
+    "slug": "homemade-products",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l’annonce",
+            "type": "text",
+            "placeholder": "Ex : Confiture artisanale de mangue, Savon bio, Jus naturel de gingembre",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "productType",
+            "label": "Type de produit",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Produits alimentaires",
+                "Boissons artisanales",
+                "Cosmétiques maison",
+                "Artisanat / Objets faits main",
+                "Autre"
+            ]
+        },
+        {
+            "name": "ingredients",
+            "label": "Ingrédients / matériaux principaux",
+            "type": "textarea",
+            "placeholder": "Ex : Mangue, sucre, citron / Beurre de karité, huiles essentielles..."
+        },
+        {
+            "name": "quantity",
+            "label": "Quantité / Conditionnement",
+            "type": "text",
+            "placeholder": "Ex : Pot de 250g, Bouteille de 1L, Lot de 3 savons"
+        },
+        {
+            "name": "expirationDate",
+            "label": "Date limite de consommation (si applicable)",
+            "type": "date"
+        },
+        {
+            "name": "origin",
+            "label": "Origine",
+            "type": "text",
+            "placeholder": "Ex : Fait maison à Abidjan"
+        },
+        {
+            "name": "deliveryMethod",
+            "label": "Mode de remise",
+            "type": "checkbox-group",
+            "options": [
+                "Remise en main propre",
+                "Livraison locale",
+                "Expédition"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 250000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "type": "textarea",
+            "placeholder": "Ajoutez des détails sur la fabrication, les bienfaits, l’utilisation, ou l’histoire du produit...",
+            "required": true,
+            "minLength": 30
+        }
+    ]
+}

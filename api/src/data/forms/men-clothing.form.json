@@ -1,0 +1,102 @@
+{
+    "slug": "men-clothing",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex: Chemise en coton Zara taille M",
+            "required": true,
+            "maxLength": 80
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex: Nike, Zara, H&M",
+            "required": false
+        },
+        {
+            "name": "clothingType",
+            "label": "Type de vêtement",
+            "type": "select",
+            "options": [
+                "Chemise",
+                "T-shirt",
+                "Pantalon",
+                "Veste",
+                "Short",
+                "Costume",
+                "Autre"
+            ],
+            "required": true
+        },
+        {
+            "name": "size",
+            "label": "Taille",
+            "type": "checkbox",
+            "options": [
+                "XS",
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL",
+                "Autre"
+            ],
+            "required": true
+        },
+        {
+            "name": "material",
+            "label": "Matière",
+            "type": "text",
+            "placeholder": "Ex: Coton, Jeans, Cuir",
+            "required": false
+        },
+        {
+            "name": "color",
+            "label": "Couleur",
+            "type": "text",
+            "placeholder": "Ex: Noir, Bleu marine",
+            "required": false
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "options": [
+                "Neuf avec étiquette",
+                "Comme neuf",
+                "Bon état",
+                "Usé"
+            ],
+            "required": true
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 15000",
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "type": "textarea",
+            "placeholder": "Décrivez l'article (état, style, saison, etc.)",
+            "required": true,
+            "maxLength": 1000
+        }
+    ]
+}

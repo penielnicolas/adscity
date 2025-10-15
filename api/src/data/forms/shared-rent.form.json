@@ -1,0 +1,98 @@
+{
+    "slug": "shared-rent",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l’annonce",
+            "type": "text",
+            "placeholder": "Ex: Chambre en colocation à Cocody",
+            "required": true,
+            "maxLength": 100
+        },
+        {
+            "name": "availableRooms",
+            "label": "Chambres disponibles",
+            "type": "number",
+            "placeholder": "Ex: 2",
+            "min": 1,
+            "required": true
+        },
+        {
+            "name": "totalRooms",
+            "label": "Nombre total de chambres",
+            "type": "number",
+            "placeholder": "Ex: 4",
+            "min": 1,
+            "required": false
+        },
+        {
+            "name": "surface",
+            "label": "Surface totale (m²)",
+            "type": "number",
+            "placeholder": "Ex: 120",
+            "min": 0,
+            "required": false
+        },
+        {
+            "name": "furnished",
+            "label": "Meublé",
+            "type": "radio",
+            "options": [
+                "Oui",
+                "Non"
+            ],
+            "required": true
+        },
+        {
+            "name": "colocGender",
+            "label": "Préférence de colocation",
+            "type": "select",
+            "options": [
+                "Mixte",
+                "Uniquement hommes",
+                "Uniquement femmes",
+                "Pas de préférence"
+            ],
+            "required": true
+        },
+        {
+            "name": "amenities",
+            "label": "Commodités",
+            "type": "checkbox",
+            "options": [
+                "Wi-Fi",
+                "Parking",
+                "Climatisation",
+                "Machine à laver",
+                "Cuisine équipée",
+                "Autre"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Loyer mensuel par colocataire",
+            "type": "number",
+            "placeholder": "Ex: 100000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "type": "textarea",
+            "placeholder": "Ajoutez une description : ambiance de la colocation, règles, proximité des transports, etc.",
+            "required": true
+        }
+    ]
+}

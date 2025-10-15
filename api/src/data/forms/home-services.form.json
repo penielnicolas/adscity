@@ -1,0 +1,72 @@
+{
+    "slug": "home-services",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l’annonce",
+            "type": "text",
+            "placeholder": "Ex : Femme de ménage disponible | Garde d’enfants à domicile | Jardinier expérimenté",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "serviceType",
+            "label": "Type de service",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Ménage / Nettoyage",
+                "Garde d’enfants",
+                "Aide aux personnes âgées",
+                "Jardinage / Bricolage léger",
+                "Garde d’animaux",
+                "Cuisine à domicile",
+                "Autre"
+            ]
+        },
+        {
+            "name": "experience",
+            "label": "Expérience / Références",
+            "type": "textarea",
+            "placeholder": "Ex : 3 ans d’expérience en garde d’enfants, références disponibles sur demande...",
+            "required": false
+        },
+        {
+            "name": "availability",
+            "label": "Disponibilités",
+            "type": "tags",
+            "placeholder": "Ex : Lundi-vendredi matin | Week-end uniquement"
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "type": "select",
+            "options": [
+                "Tarif horaire",
+                "Prix fixe (par prestation)",
+                "À négocier"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "min": 0
+        },
+        {
+            "name": "location",
+            "label": "Zone d’intervention",
+            "type": "location",
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description du service",
+            "type": "textarea",
+            "placeholder": "Décrivez vos services, votre expérience, vos méthodes de travail et ce que vous proposez.",
+            "required": true,
+            "minLength": 50
+        }
+    ]
+}
