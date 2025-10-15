@@ -1,0 +1,83 @@
+{
+    "slug": "dogs-cats",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l’annonce",
+            "type": "text",
+            "placeholder": "Ex : Chiot berger allemand à vendre | Chaton persan disponible",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "animalType",
+            "label": "Type d’animal",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Chien",
+                "Chat"
+            ]
+        },
+        {
+            "name": "breed",
+            "label": "Race",
+            "type": "text",
+            "placeholder": "Ex : Labrador, Siamois"
+        },
+        {
+            "name": "age",
+            "label": "Âge",
+            "type": "select",
+            "options": [
+                "Moins de 6 mois",
+                "6 mois - 2 ans",
+                "2 - 7 ans",
+                "Plus de 7 ans"
+            ]
+        },
+        {
+            "name": "gender",
+            "label": "Sexe",
+            "type": "select",
+            "options": [
+                "Mâle",
+                "Femelle"
+            ]
+        },
+        {
+            "name": "vaccinated",
+            "label": "Vaccination",
+            "type": "checkbox",
+            "options": [
+                "Vacciné",
+                "Passeport / Carnet de santé disponible"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ]
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "min": 0
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "type": "textarea",
+            "placeholder": "Ajoutez plus de détails : tempérament, alimentation, conditions de vie, pedigree, etc.",
+            "required": true,
+            "minLength": 50
+        }
+    ]
+}

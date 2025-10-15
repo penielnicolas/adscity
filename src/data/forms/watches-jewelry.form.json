@@ -1,0 +1,110 @@
+{
+    "slug": "watches-jewelry",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex: Montre Rolex Submariner originale",
+            "required": true,
+            "maxLength": 80
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex: Rolex, Cartier, Fossil, Guess",
+            "required": false
+        },
+        {
+            "name": "itemType",
+            "label": "Type d'article",
+            "type": "select",
+            "options": [
+                "Montre",
+                "Bague",
+                "Bracelet",
+                "Collier",
+                "Boucles d'oreilles",
+                "Parure complète",
+                "Autre"
+            ],
+            "required": true
+        },
+        {
+            "name": "material",
+            "label": "Matière",
+            "type": "text",
+            "options": [
+                "Or",
+                "Argent",
+                "Platine",
+                "Acier inoxydable",
+                "Cuir",
+                "Diamants",
+                "Autre"
+            ],
+            "required": false
+        },
+        {
+            "name": "gender",
+            "label": "Destiné à",
+            "type": "checkbox",
+            "options": [
+                "Homme",
+                "Femme",
+                "Unisexe"
+            ],
+            "required": false
+        },
+        {
+            "name": "authenticity",
+            "label": "Authenticité",
+            "type": "checkbox",
+            "options": [
+                "Avec certificat d’authenticité",
+                "Garantie incluse",
+                "Sans preuve d’authenticité"
+            ],
+            "required": false
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "options": [
+                "Neuf avec étiquette / certificat",
+                "Comme neuf",
+                "Bon état",
+                "Usé"
+            ],
+            "required": true
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 25000",
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "type": "textarea",
+            "placeholder": "Décrivez la montre ou le bijou (état, authenticité, provenance, etc.)",
+            "required": true,
+            "maxLength": 1500
+        }
+    ]
+}

@@ -1,0 +1,99 @@
+{
+    "slug": "tickets-events",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l’annonce",
+            "type": "text",
+            "placeholder": "Ex : 2 billets concert Burna Boy | Entrées match Côte d’Ivoire - Cameroun",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "eventType",
+            "label": "Type d’événement",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Concert",
+                "Festival",
+                "Théâtre / Spectacle",
+                "Événement sportif",
+                "Conférence / Salon",
+                "Autre"
+            ]
+        },
+        {
+            "name": "eventName",
+            "label": "Nom de l’événement",
+            "type": "text",
+            "placeholder": "Ex : Concert Magic System, CAN 2025"
+        },
+        {
+            "name": "eventDate",
+            "label": "Date de l’événement",
+            "type": "date",
+            "required": true
+        },
+        {
+            "name": "eventLocation",
+            "label": "Lieu de l’événement",
+            "type": "text",
+            "placeholder": "Ex : Palais de la Culture, Abidjan | Stade d’Ebimpé",
+            "required": true
+        },
+        {
+            "name": "ticketType",
+            "label": "Type de billet",
+            "type": "select",
+            "options": [
+                "Standard",
+                "VIP",
+                "Étudiant",
+                "Autre"
+            ]
+        },
+        {
+            "name": "quantity",
+            "label": "Nombre de billets",
+            "type": "number",
+            "min": 1,
+            "required": true
+        },
+        {
+            "name": "deliveryMethod",
+            "label": "Mode de remise",
+            "type": "checkbox-group",
+            "options": [
+                "Remise en main propre",
+                "Envoi par email / e-ticket",
+                "Livraison par coursier"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ]
+        },
+        {
+            "name": "price",
+            "label": "Prix par billet",
+            "type": "number",
+            "min": 0
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "type": "textarea",
+            "placeholder": "Ajoutez plus de détails : type de place, zone VIP, conditions particulières...",
+            "required": true,
+            "minLength": 30
+        }
+    ]
+}

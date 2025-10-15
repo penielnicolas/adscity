@@ -1,0 +1,107 @@
+{
+    "slug": "equipment",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l’annonce",
+            "type": "text",
+            "placeholder": "Ex : Compresseur industriel 50L | Groupe électrogène Caterpillar | Machine de soudage",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "equipmentType",
+            "label": "Type d’équipement",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Générateurs / Groupes électrogènes",
+                "Compresseurs",
+                "Machines de soudage",
+                "Pompes industrielles",
+                "Convoyeurs",
+                "Machines d’emballage",
+                "Équipements agroalimentaires",
+                "Équipements de chantier",
+                "Autre"
+            ]
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex : Caterpillar, Siemens, Atlas Copco"
+        },
+        {
+            "name": "model",
+            "label": "Modèle / Référence",
+            "type": "text",
+            "placeholder": "Ex : CAT 3516, Atlas Copco GX11"
+        },
+        {
+            "name": "power",
+            "label": "Puissance / Capacité",
+            "type": "text",
+            "placeholder": "Ex : 500 kVA | 15 bar | 200L"
+        },
+        {
+            "name": "year",
+            "label": "Année de fabrication",
+            "type": "number",
+            "min": 1960,
+            "max": 2025
+        },
+        {
+            "name": "usageHours",
+            "label": "Heures d’utilisation",
+            "type": "number",
+            "placeholder": "Ex : 1500 h"
+        },
+        {
+            "name": "delivery",
+            "label": "Options",
+            "type": "checkbox",
+            "options": [
+                "À récupérer sur place",
+                "Livraison disponible",
+                "Installation / Mise en service possible"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État de l’équipement",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Occasion",
+                "Révisé / Remis à neuf"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Fixe",
+                "Négociable",
+                "Sur devis"
+            ]
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "min": 0
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoutez les spécifications techniques : puissance, capacité, certifications, normes, conditions de garantie.",
+            "required": true,
+            "minLength": 50
+        }
+    ]
+}

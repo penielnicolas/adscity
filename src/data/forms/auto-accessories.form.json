@@ -1,0 +1,93 @@
+{
+    "slug": "auto-accessories",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex: Casque moto intégral Shark neuf",
+            "required": true,
+            "maxLength": 120
+        },
+        {
+            "name": "accessoryType",
+            "label": "Type d’accessoire",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Casque moto",
+                "Pneus",
+                "Jantes",
+                "Autoradio / Multimédia",
+                "Accessoires intérieurs (tapis, housses...)",
+                "Accessoires extérieurs (coffre de toit, barres...)",
+                "Sécurité (extincteur, traingle, gilet...)",
+                "Entretien (huiles, produits, kits...)",
+                "Autre"
+            ]
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex: Michelin, Sony, Shark",
+            "required": false
+        },
+        {
+            "name": "compatibility",
+            "label": "Compatibilité",
+            "type": "text",
+            "placeholder": "Ex: Toyota Corolla 2015-2019, toutes motos",
+            "required": false
+        },
+        {
+            "name": "features",
+            "label": "Caractéristiques",
+            "type": "checkbox",
+            "required": false,
+            "options": [
+                "Pièce d’origine",
+                "Certifié / homologué",
+                "Garantie disponible",
+                "Autre"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Occasion"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 35000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoutez des détails : état, dimensions, compatibilité, garantie…",
+            "required": true
+        }
+    ]
+}

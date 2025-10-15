@@ -1,0 +1,106 @@
+{
+    "slug": "job-requests",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Intitulé du profil",
+            "type": "text",
+            "placeholder": "Ex : Développeur Web Full-Stack | Commercial B2B | Chauffeur poids lourd",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "jobType",
+            "label": "Type d'emploi recherhé",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Temps plein",
+                "Temps partiel",
+                "Contrat",
+                "Freelance / Mission",
+                "Stage",
+                "Intérim / Temporaire"
+            ]
+        },
+        {
+            "name": "fullName",
+            "label": "Nom complet",
+            "type": "text",
+            "required": true
+        },
+        {
+            "name": "locationPreference",
+            "label": "Lieu de travail souhaité",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Sur site",
+                "100% Télétravail",
+                "Hybride (mixte)"
+            ]
+        },
+        {
+            "name": "experienceLevel",
+            "label": "Niveau d'expérience",
+            "type": "select",
+            "required": false,
+            "options": [
+                "Junior / Débutant",
+                "Intermédiaire",
+                "Sénior",
+                "Lead / Manager"
+            ]
+        },
+        {
+            "name": "skills",
+            "label": "Compétences principales",
+            "type": "tags",
+            "placeholder": "Ex : Vente B2B, Gestion d'équipe, React, SQL",
+            "required": true
+        },
+        {
+            "name": "education",
+            "label": "Formation & Diplômes",
+            "type": "textarea",
+            "placeholder": "Ex : Licence Informatique, Master Marketing...",
+            "required": false
+        },
+        {
+            "name": "languages",
+            "label": "Langues parlées",
+            "type": "tags",
+            "placeholder": "Ex : Français, Anglais, Espagnol"
+        },
+        {
+            "name": "availability",
+            "label": "Disponibilité",
+            "type": "select",
+            "options": [
+                "Immédiate",
+                "Sous 1 mois",
+                "Sous 3 mois"
+            ]
+        },
+        {
+            "name": "salaryExpectation",
+            "label": "Salaire souhaité",
+            "type": "select",
+            "required": true,
+            "options": [
+                "À négocier",
+                "À partir de",
+                "Montant fixe",
+                "Stage non rémunéré / Volontaire"
+            ]
+        },
+        {
+            "name": "description",
+            "label": "Présentation personnelle",
+            "type": "textarea",
+            "placeholder": "Décris ton parcours, motivations et ambitions...",
+            "required": true,
+            "minLength": 50
+        }
+    ]
+}

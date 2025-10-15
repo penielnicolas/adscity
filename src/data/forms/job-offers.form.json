@@ -1,0 +1,146 @@
+{
+    "slug": "job-offers",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'offre",
+            "type": "text",
+            "placeholder": "Ex : Développeur·se Full-Stack (Node.js / React)",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "jobType",
+            "label": "Type d'emploi",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Temps plein",
+                "Temps partiel",
+                "Contrat",
+                "Freelance / Mission",
+                "Stage",
+                "Intérim / Temporaire"
+            ]
+        },
+        {
+            "name": "companyName",
+            "label": "Nom de l'entreprise",
+            "type": "text",
+            "placeholder": "Ex : AdsCity S.A.",
+            "required": true
+        },
+        {
+            "name": "companyIndustry",
+            "label": "Secteur d'activité",
+            "type": "text",
+            "required": false
+        },
+        {
+            "name": "companySize",
+            "label": "Taille de l'entreprise",
+            "type": "select",
+            "options": [
+                "1-10",
+                "11-50",
+                "51-200",
+                "201-1000",
+                "1000+"
+            ]
+        },
+        {
+            "name": "locationType",
+            "label": "Lieu de travail",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Sur site",
+                "100% Télétravail",
+                "Hybride (mixte)"
+            ]
+        },
+        {
+            "name": "experienceLevel",
+            "label": "Niveau d'expérience",
+            "type": "select",
+            "required": false,
+            "options": [
+                "Junior / Débutant",
+                "Intermédiaire",
+                "Sénior",
+                "Lead / Manager"
+            ]
+        },
+        {
+            "name": "skills",
+            "label": "Compétences requises",
+            "type": "tags",
+            "placeholder": "Ex : Node.js, React, SQL",
+            "required": false
+        },
+        {
+            "name": "responsibilities",
+            "label": "Responsabilités principales",
+            "type": "textarea",
+            "placeholder": "Décrivez les missions principales",
+            "required": true,
+            "minLength": 30
+        },
+        {
+            "name": "requirements",
+            "label": "Exigences & qualifications",
+            "type": "textarea",
+            "placeholder": "Diplôme, certifications, compétences techniques...",
+            "required": false
+        },
+        {
+            "name": "benefits",
+            "label": "Avantages & prestations",
+            "type": "checkbox",
+            "options": [
+                "Couverture santé",
+                "Plan retraite",
+                "Télétravail possible",
+                "Horaires flexibles",
+                "Formation",
+                "Autre"
+            ]
+        },
+        {
+            "name": "employmentStartDate",
+            "label": "Date de début souhaitée",
+            "type": "date",
+            "required": false
+        },
+        {
+            "name": "contractDuration",
+            "label": "Durée du contrat (si applicable)",
+            "type": "text",
+            "placeholder": "Ex : 6 mois / CDI / CDD 12 mois",
+            "required": false
+        },
+        {
+            "name": "applicationDeadline",
+            "label": "Date limite de candidature",
+            "type": "date",
+            "required": false
+        },
+        {
+            "name": "salaryType",
+            "label": "Rémunération",
+            "type": "select",
+            "required": true,
+            "options": [
+                "À partir de",
+                "Montant fixe",
+                "Bénévolat / Stage non payé"
+            ]
+        },
+        {
+            "name": "description",
+            "label": "Description longue (optionnelle)",
+            "type": "textarea",
+            "required": false
+        }
+    ]
+}

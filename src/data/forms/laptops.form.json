@@ -1,0 +1,142 @@
+{
+    "slug": "laptops",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex: MacBook Pro 13 pouces 2020",
+            "required": true,
+            "maxLength": 120
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "select",
+            "required": true,
+            "options": []
+        },
+        {
+            "name": "model",
+            "label": "Modèle",
+            "type": "text",
+            "placeholder": "Ex: ThinkPad T14, MacBook Air M1",
+            "required": false
+        },
+        {
+            "name": "processor",
+            "label": "Processeur",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Intel Core i3",
+                "Intel Core i5",
+                "Intel Core i7",
+                "Intel Core i9",
+                "AMD Ryzen 3",
+                "AMD Ryzen 5",
+                "AMD Ryzen 7",
+                "AMD Ryzen 9",
+                "Apple M1",
+                "Apple M2",
+                "Autre"
+            ]
+        },
+        {
+            "name": "ram",
+            "label": "Mémoire RAM",
+            "type": "select",
+            "required": true,
+            "options": [
+                "4 Go",
+                "8 Go",
+                "16 Go",
+                "32 Go",
+                "64 Go"
+            ]
+        },
+        {
+            "name": "storage",
+            "label": "Capacité de stockage",
+            "type": "select",
+            "required": true,
+            "options": [
+                "128 Go SSD",
+                "256 Go SSD",
+                "512 Go SSD",
+                "1 To SSD",
+                "2 To SSD",
+                "Disque dur (HDD)"
+            ]
+        },
+        {
+            "name": "screenSize",
+            "label": "Taille écran",
+            "type": "select",
+            "required": true,
+            "options": [
+                "11 pouces",
+                "12 pouces",
+                "13 pouces",
+                "14 pouces",
+                "15 pouces",
+                "16 pouces",
+                "17 pouces"
+            ]
+        },
+        {
+            "name": "features",
+            "label": "Caractéristiques",
+            "type": "checkbox",
+            "required": false,
+            "options": [
+                "Écran tactile",
+                "Clavier rétroéclairé",
+                "Lecteur d'empreintes",
+                "Webcam HD",
+                "Carte graphique dédiée",
+                "Bluetooth",
+                "Wi-Fi 6",
+                "Autre"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Occasion",
+                "Reconditionné"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 350000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoutez des détails : état, garantie, configuration, accessoires inclus, etc.",
+            "required": true
+        }
+    ]
+}

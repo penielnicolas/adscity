@@ -1,0 +1,102 @@
+{
+    "slug": "dietary-supplements",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l’annonce",
+            "type": "text",
+            "placeholder": "Ex : Vitamine C 1000mg, Protéine Whey, Oméga 3",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "supplementType",
+            "label": "Type de complément",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Vitamines & Minéraux",
+                "Protéines & Acides aminés",
+                "Perte de poids",
+                "Énergie & Endurance",
+                "Immunité & Bien-être",
+                "Compléments naturels / Plantes",
+                "Autre"
+            ]
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex : MyProtein, Herbalife, Nutrend, NOW Foods"
+        },
+        {
+            "name": "form",
+            "label": "Forme",
+            "type": "select",
+            "options": [
+                "Gélules / Capsules",
+                "Comprimés",
+                "Poudre",
+                "Liquide",
+                "Autre"
+            ]
+        },
+        {
+            "name": "quantity",
+            "label": "Quantité",
+            "type": "text",
+            "placeholder": "Ex : 60 gélules, 1kg, 500ml"
+        },
+        {
+            "name": "expirationDate",
+            "label": "Date de péremption",
+            "type": "date",
+            "required": true
+        },
+        {
+            "name": "origin",
+            "label": "Origine / Provenance",
+            "type": "text",
+            "placeholder": "Ex : USA, France, Allemagne"
+        },
+        {
+            "name": "deliveryMethod",
+            "label": "Mode de remise",
+            "type": "checkbox-group",
+            "options": [
+                "Remise en main propre",
+                "Livraison locale",
+                "Expédition"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 5000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "type": "textarea",
+            "placeholder": "Ajoutez des détails sur la composition, les bienfaits, l’utilisation recommandée...",
+            "required": true,
+            "minLength": 30
+        }
+    ]
+}

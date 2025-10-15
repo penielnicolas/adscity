@@ -1,0 +1,203 @@
+{
+    "slug": "house-sale",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex: Maison 4 pièces à Riviera Palmeraie",
+            "required": true,
+            "maxLength": 100
+        },
+        {
+            "name": "propertyType",
+            "label": "Type de bien",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Maison individuelle",
+                "Maison jumelée",
+                "Maison de ville",
+                "Duplex",
+                "Villa",
+                "Bungalow",
+                "Autre"
+            ]
+        },
+        {
+            "name": "bedrooms",
+            "label": "Chambres",
+            "type": "number",
+            "min": 0,
+            "max": 30,
+            "required": true
+        },
+        {
+            "name": "bathrooms",
+            "label": "Salles de bain",
+            "type": "number",
+            "min": 0,
+            "max": 30,
+            "required": true
+        },
+        {
+            "name": "toilets",
+            "label": "Toilettes",
+            "type": "number",
+            "min": 0,
+            "max": 30,
+            "required": false
+        },
+        {
+            "name": "floors",
+            "label": "Nombre d'étages (R+)",
+            "type": "number",
+            "min": 0,
+            "max": 10,
+            "required": false,
+            "hint": "Ex: 0 pour plain-pied, 1 pour R+1, etc."
+        },
+        {
+            "name": "coveredArea",
+            "label": "Surface habitable",
+            "type": "number",
+            "unit": "m²",
+            "min": 1,
+            "max": 10000,
+            "required": true
+        },
+        {
+            "name": "landArea",
+            "label": "Surface du terrain",
+            "type": "number",
+            "unit": "m²",
+            "min": 1,
+            "max": 100000,
+            "required": false
+        },
+        {
+            "name": "yearBuilt",
+            "label": "Année de construction",
+            "type": "number",
+            "min": 1900,
+            "max": 2100,
+            "required": false
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "options": [
+                "Neuf",
+                "Rénové",
+                "Bon état",
+                "À rénover"
+            ],
+            "required": true
+        },
+        {
+            "name": "constructionStatus",
+            "label": "Statut de construction",
+            "type": "select",
+            "required": false,
+            "options": [
+                "Achevé",
+                "En construction",
+                "Sur plan"
+            ]
+        },
+        {
+            "name": "furnishing",
+            "label": "Meublé",
+            "type": "select",
+            "required": false,
+            "options": [
+                "Non meublé",
+                "Semi-meublé",
+                "Meublé"
+            ]
+        },
+        {
+            "name": "amenities",
+            "label": "Équipements",
+            "type": "checkbox",
+            "required": false,
+            "options": [
+                "Parking / Garage",
+                "Jardin",
+                "Balcon / Terrasse",
+                "Piscine",
+                "Climatisation",
+                "Chauffe-eau",
+                "Solaire",
+                "Eau courante",
+                "Électricité",
+                "Voie bitumée",
+                "Sécurité (gardien/système)",
+                "Autre"
+            ]
+        },
+        {
+            "name": "occupancy",
+            "label": "Occupation actuelle",
+            "type": "select",
+            "required": false,
+            "options": [
+                "Libre",
+                "Occupé par le propriétaire",
+                "Loué (occupé par un locataire)"
+            ]
+        },
+        {
+            "name": "legalDocs",
+            "label": "Documents / Statut légal",
+            "type": "checkbox",
+            "required": false,
+            "options": [
+                "Titre de propriété / ACD",
+                "Certificat foncier",
+                "Permis de construire",
+                "Attestation de fin de travaux",
+                "Acte notarié",
+                "Autre"
+            ]
+        },
+        {
+            "name": "hoa",
+            "label": "Charges de copropriété / syndic",
+            "type": "radio",
+            "required": false,
+            "options": [
+                "Oui",
+                "Non"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 85000000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "type": "textarea",
+            "placeholder": "Décrivez l'état, la localisation, les atouts, la proximité des commodités, etc.",
+            "required": true,
+            "maxLength": 3000
+        }
+    ]
+}

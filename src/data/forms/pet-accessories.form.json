@@ -1,0 +1,78 @@
+{
+    "slug": "pet-accessories",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l’annonce",
+            "type": "text",
+            "placeholder": "Ex : Cage pour perroquet | Aquarium 100L avec pompe | Collier pour chien en cuir",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "accessoryType",
+            "label": "Type d’accessoire",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Cages & Habitats",
+                "Aquariums & Accessoires",
+                "Jouets pour animaux",
+                "Paniers & Lits",
+                "Vêtements & Accessoires",
+                "Gamelles & Distributeurs",
+                "Autres accessoires"
+            ]
+        },
+        {
+            "name": "material",
+            "label": "Matière",
+            "type": "text",
+            "placeholder": "Ex : Plastique, métal, bois, cuir..."
+        },
+        {
+            "name": "dimensions",
+            "label": "Dimensions",
+            "type": "text",
+            "placeholder": "Ex : 60x40x40 cm, 100L..."
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Occasion"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 250000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "type": "textarea",
+            "placeholder": "Ajoutez des détails : état de l’accessoire, taille, compatibilité avec l’animal, marque...",
+            "required": true,
+            "minLength": 40
+        }
+    ]
+}

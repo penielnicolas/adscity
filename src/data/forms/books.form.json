@@ -1,0 +1,85 @@
+{
+    "slug": "books",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l’annonce",
+            "type": "text",
+            "placeholder": "Ex : Livre 'L'Alchimiste' de Paulo Coelho | Magazine Vogue édition 2024",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "bookType",
+            "label": "Type",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Roman",
+                "Manuel scolaire",
+                "Magazine",
+                "Bande dessinée / Manga",
+                "Autre"
+            ]
+        },
+        {
+            "name": "author",
+            "label": "Auteur",
+            "type": "text",
+            "placeholder": "Ex : Victor Hugo"
+        },
+        {
+            "name": "publisher",
+            "label": "Éditeur",
+            "type": "text",
+            "placeholder": "Ex : Gallimard"
+        },
+        {
+            "name": "year",
+            "label": "Année de publication",
+            "type": "number",
+            "min": 1500,
+            "max": 2030
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Comme neuf",
+                "Bon état",
+                "Abîmé"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 5000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "type": "textarea",
+            "placeholder": "Ajoutez plus de détails : résumé, état du livre, langue, édition limitée, collection, etc.",
+            "required": true,
+            "minLength": 40
+        }
+    ]
+}

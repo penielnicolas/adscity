@@ -1,0 +1,178 @@
+{
+    "slug": "air-conditioning",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex : Climatiseur LG 12000 BTU",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "listingType",
+            "label": "Type d'annonce",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Vente",
+                "Échange",
+                "Gratuit"
+            ]
+        },
+        {
+            "name": "applianceType",
+            "label": "Type d'appareil",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Climatiseur Split",
+                "Climatiseur Fenêtre",
+                "Climatiseur Portable",
+                "Ventilateur",
+                "Rafraîchisseur d’air",
+                "Autre"
+            ]
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex : LG, Samsung, Hisense",
+            "required": false
+        },
+        {
+            "name": "model",
+            "label": "Modèle",
+            "type": "text",
+            "required": false
+        },
+        {
+            "name": "coolingPower",
+            "label": "Puissance frigorifique (BTU)",
+            "type": "number",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "energyClass",
+            "label": "Classe énergétique",
+            "type": "select",
+            "required": false,
+            "options": [
+                "A+++",
+                "A++",
+                "A+",
+                "A",
+                "B",
+                "C"
+            ]
+        },
+        {
+            "name": "noiseLevel",
+            "label": "Niveau sonore (dB)",
+            "type": "number",
+            "min": 0,
+            "required": false
+        },
+        {
+            "name": "dimensions",
+            "label": "Dimensions (cm)",
+            "type": "group",
+            "required": false,
+            "fields": [
+                {
+                    "name": "length",
+                    "label": "Longueur",
+                    "type": "number",
+                    "min": 0
+                },
+                {
+                    "name": "width",
+                    "label": "Largeur",
+                    "type": "number",
+                    "min": 0
+                },
+                {
+                    "name": "height",
+                    "label": "Hauteur",
+                    "type": "number",
+                    "min": 0
+                }
+            ]
+        },
+        {
+            "name": "installationIncluded",
+            "label": "Installation incluse ?",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Oui",
+                "Non"
+            ]
+        },
+        {
+            "name": "deliveryAvailable",
+            "label": "Livraison disponible ?",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Oui",
+                "Non"
+            ]
+        },
+        {
+            "name": "warranty",
+            "label": "Garantie",
+            "type": "select",
+            "required": false,
+            "options": [
+                "Aucune",
+                "Constructeur",
+                "Vendeur",
+                "Autre"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Comme neuf",
+                "Bon état",
+                "Usagé",
+                "À réparer"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 150000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Décris l’état, la puissance, l’utilisation, accessoires inclus...",
+            "required": true,
+            "minLength": 20
+        }
+    ]
+}

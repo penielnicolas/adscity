@@ -1,0 +1,88 @@
+{
+    "slug": "private-lessons",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l’annonce",
+            "type": "text",
+            "placeholder": "Ex : Cours particuliers de mathématiques | Cours d’anglais niveau débutant",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "subject",
+            "label": "Matière enseignée",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Mathématiques",
+                "Physique-Chimie",
+                "Langues étrangères",
+                "Informatique / Programmation",
+                "Musique",
+                "Sport / Fitness",
+                "Autre"
+            ]
+        },
+        {
+            "name": "level",
+            "label": "Niveau ciblé",
+            "type": "select",
+            "options": [
+                "École primaire",
+                "Collège / Lycée",
+                "Université",
+                "Professionnels / Adultes",
+                "Tous niveaux"
+            ]
+        },
+        {
+            "name": "teachingMode",
+            "label": "Mode d’enseignement",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Présentiel",
+                "En ligne (visioconférence)",
+                "Hybride"
+            ]
+        },
+        {
+            "name": "experience",
+            "label": "Expérience d’enseignement",
+            "type": "textarea",
+            "placeholder": "Ex : 5 ans d’expérience comme professeur particulier, diplômé en Lettres modernes...",
+            "required": false
+        },
+        {
+            "name": "availability",
+            "label": "Disponibilités",
+            "type": "tags",
+            "placeholder": "Ex : Soirs de semaine, Week-end, Vacances scolaires"
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "type": "select",
+            "options": [
+                "Prix horaire",
+                "À négocier"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix (par heure ou forfait)",
+            "type": "number",
+            "min": 0
+        },
+        {
+            "name": "description",
+            "label": "Description du cours",
+            "type": "textarea",
+            "placeholder": "Décrivez vos méthodes d’enseignement, votre pédagogie, et ce que vous proposez aux élèves.",
+            "required": true,
+            "minLength": 50
+        }
+    ]
+}

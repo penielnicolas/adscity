@@ -1,0 +1,87 @@
+{
+    "slug": "construction",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l’annonce",
+            "type": "text",
+            "placeholder": "Ex : Ciment Portland 50kg | Briques en terre cuite | Carrelage importé",
+            "required": true,
+            "maxLength": 140
+        },
+        {
+            "name": "materialType",
+            "label": "Type de matériau",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Ciment",
+                "Briques / Blocs",
+                "Bois",
+                "Acier / Fer",
+                "Carrelage / Marbre",
+                "Verre",
+                "Peinture",
+                "Toiture (tôle, tuile…)",
+                "Plomberie",
+                "Matériel électrique",
+                "Autre"
+            ]
+        },
+        {
+            "name": "quantity",
+            "label": "Quantité disponible",
+            "type": "text",
+            "placeholder": "Ex : 500 sacs | 100 m² | 20 tonnes",
+            "required": true
+        },
+        {
+            "name": "unit",
+            "label": "Unité de vente",
+            "type": "select",
+            "options": [
+                "Pièce",
+                "Kg",
+                "Tonne",
+                "M²",
+                "Sac",
+                "Unité"
+            ]
+        },
+        {
+            "name": "delivery",
+            "label": "Options de livraison",
+            "type": "checkbox",
+            "options": [
+                "À récupérer sur place",
+                "Livraison disponible",
+                "Installation possible"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Prix fixe (par unité)",
+                "Négociable",
+                "Prix de gros"
+            ]
+        },
+        {
+            "name": "price",
+            "label": "Prix unitaire",
+            "type": "number",
+            "min": 0
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoutez les caractéristiques techniques : dimensions, résistance, marque, normes de qualité, conditions de livraison.",
+            "required": true,
+            "minLength": 50
+        }
+    ]
+}

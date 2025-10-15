@@ -1,0 +1,102 @@
+{
+    "slug": "computer-accessories",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex: Clavier mécanique RGB / Souris gamer Logitech",
+            "required": true,
+            "maxLength": 120
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex: Logitech, Corsair, HP, etc.",
+            "required": false
+        },
+        {
+            "name": "type",
+            "label": "Type d'accessoire",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Clavier",
+                "Souris",
+                "Écran PC",
+                "Casque Audio",
+                "Haut-parleurs",
+                "Webcam",
+                "Microphone",
+                "Hub USB",
+                "Disque dur externe",
+                "Refroidisseur PC",
+                "Ondulaire",
+                "Autre"
+            ]
+        },
+        {
+            "name": "compatibility",
+            "label": "Compatibilité",
+            "type": "checkbox",
+            "required": false,
+            "options": [
+                "Windows",
+                "Mac",
+                "Linux",
+                "Universel"
+            ]
+        },
+        {
+            "name": "features",
+            "label": "Caractéristiques",
+            "type": "checkbox",
+            "required": false,
+            "options": [
+                "Sans fil",
+                "Éclairage RGB",
+                "Spécial gaming",
+                "Ergonomique",
+                "Transportable"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Occasion"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 15000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoutez plus de détails sur l'état, l'utilisation, la compatibilité, etc.",
+            "required": true
+        }
+    ]
+}

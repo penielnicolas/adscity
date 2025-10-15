@@ -1,0 +1,257 @@
+{
+    "slug": "trucks-buses",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex: Camion Mercedes Actros 2018 - Très bon état",
+            "required": true,
+            "maxLength": 120
+        },
+        {
+            "name": "vehicleType",
+            "label": "Type de véhicule",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Camion",
+                "Bus",
+                "Minibus",
+                "Fourgon utilitaire",
+                "Autre"
+            ]
+        },
+        {
+            "name": "make",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex: Iveco, Mercedes, Toyota",
+            "required": true
+        },
+        {
+            "name": "model",
+            "label": "Modèle",
+            "type": "text",
+            "placeholder": "Ex: Hiace, Actros, Coaster",
+            "required": true
+        },
+        {
+            "name": "year",
+            "label": "Année",
+            "type": "number",
+            "min": 1950,
+            "max": 2030,
+            "required": true
+        },
+        {
+            "name": "mileage",
+            "label": "Kilométrage (km)",
+            "type": "number",
+            "unit": "km",
+            "min": 0,
+            "required": false
+        },
+        {
+            "type": "select",
+            "label": "Carburant",
+            "name": "fuelType",
+            "required": true,
+            "options": [
+                "Essence",
+                "Diesel",
+                "Hybride",
+                "Électrique"
+            ]
+        },
+        {
+            "name": "batteryCapacity",
+            "label": "Capacité batterie (kWh)",
+            "type": "number",
+            "min": 0,
+            "required": true,
+            "conditional": {
+                "field": "fuelType",
+                "showIf": [
+                    "electric",
+                    "hybrid"
+                ]
+            }
+        },
+        {
+            "name": "electricRange",
+            "label": "Autonomie (km)",
+            "type": "number",
+            "min": 0,
+            "required": false,
+            "conditional": {
+                "field": "fuelType",
+                "showIf": [
+                    "electric",
+                    "hybrid"
+                ]
+            }
+        },
+        {
+            "name": "engineCapacity",
+            "label": "Cylindrée (cc)",
+            "type": "number",
+            "min": 1000,
+            "max": 20000,
+            "required": false
+        },
+        {
+            "name": "power",
+            "label": "Puissance (ch/kW)",
+            "type": "text",
+            "placeholder": "Ex: 400 ch / 294 kW",
+            "required": false
+        },
+        {
+            "name": "gearbox",
+            "label": "Boîte de vitesses",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Manuelle",
+                "Automatique",
+                "Semi-automatique"
+            ]
+        },
+        {
+            "name": "axles",
+            "label": "Nombre d’essieux",
+            "type": "number",
+            "min": 2,
+            "max": 10,
+            "required": false,
+            "conditional": {
+                "field": "vehicleType",
+                "showIf": [
+                    "truck"
+                ]
+            }
+        },
+        {
+            "name": "payload",
+            "label": "Charge utile (kg)",
+            "type": "number",
+            "min": 1000,
+            "max": 50000,
+            "required": false
+        },
+        {
+            "name": "gvw",
+            "label": "Poids total en charge (PTAC, kg)",
+            "type": "number",
+            "min": 2000,
+            "max": 80000,
+            "required": false
+        },
+        {
+            "name": "seats",
+            "label": "Nombre de places",
+            "type": "number",
+            "min": 2,
+            "max": 100,
+            "required": false
+        },
+        {
+            "name": "seats",
+            "label": "Nombre de places",
+            "type": "number",
+            "min": 2,
+            "max": 100,
+            "required": false
+        },
+        {
+            "name": "doors",
+            "label": "Nombre de portes",
+            "type": "number",
+            "min": 2,
+            "max": 5,
+            "required": false
+        },
+        {
+            "name": "vin",
+            "label": "N° VIN / Châssis",
+            "type": "text",
+            "placeholder": "Ex: WDB9340321L123456",
+            "required": false,
+            "validation": {
+                "pattern": "^[A-HJ-NPR-Z0-9]{11,17}$",
+                "message": "Le N° de série doit avoir 11 à 17 caractères alphanumériques valides."
+            }
+        },
+        {
+            "name": "features",
+            "label": "Équipements & options",
+            "type": "checkbox",
+            "required": false,
+            "options": [
+                "Climatisation",
+                "ABS",
+                "Airbags",
+                "GPS",
+                "Radio / Multimédia",
+                "Caméra de recul",
+                "Tachygraphe",
+                "Cabine couchette (camion)",
+                "Autre"
+            ]
+        },
+        {
+            "name": "documents",
+            "label": "Documents disponibles",
+            "type": "checkbox",
+            "required": false,
+            "options": [
+                "Carte grise",
+                "Assurance",
+                "Contrôle technique",
+                "Papiers d'importation",
+                "Manuels / Factures",
+                "Autre"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Occasion",
+                "À réparer"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Enchères",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 25000000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoutez des détails sur l'état, l’entretien, les équipements, l’historique d’usage…",
+            "required": true
+        }
+    ]
+}

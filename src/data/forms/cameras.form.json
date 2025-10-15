@@ -1,0 +1,112 @@
+{
+    "slug": "cameras",
+    "fields": [
+        {
+            "name": "title",
+            "label": "Titre de l'annonce",
+            "type": "text",
+            "placeholder": "Ex: Canon EOS 90D + objectif 18-135mm",
+            "required": true,
+            "maxLength": 120
+        },
+        {
+            "name": "brand",
+            "label": "Marque",
+            "type": "text",
+            "placeholder": "Ex: Canon, Nikon, Sony, Panasonic, Fujifilm",
+            "required": true
+        },
+        {
+            "name": "model",
+            "label": "Modèle",
+            "type": "text",
+            "placeholder": "Ex: EOS 90D, D750, Alpha A7 III",
+            "required": true
+        },
+        {
+            "name": "cameraType",
+            "label": "Type d'appareil",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Compact",
+                "Bridge",
+                "Reflex (DSLR)",
+                "Hybride (Mirrorless)",
+                "Instantané (Polaroid...)",
+                "Caméra vidéo"
+            ]
+        },
+        {
+            "name": "megapixels",
+            "label": "Résolution (MP)",
+            "type": "number",
+            "unit": "MP",
+            "placeholder": "Ex: 24",
+            "required": false
+        },
+        {
+            "name": "features",
+            "label": "Fonctionnalités",
+            "type": "checkbox",
+            "required": false,
+            "options": [
+                "Wi-Fi",
+                "Bluetooth",
+                "Écran tactile",
+                "Vidéo 4K",
+                "Stabilisation d'image",
+                "Étanche",
+                "GPS",
+                "Autre"
+            ]
+        },
+        {
+            "name": "lensIncluded",
+            "label": "Objectif inclus ?",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Oui",
+                "Non"
+            ]
+        },
+        {
+            "name": "condition",
+            "label": "État",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Neuf",
+                "Occasion"
+            ]
+        },
+        {
+            "name": "priceType",
+            "label": "Type de prix",
+            "placeholder": "Prix négociable",
+            "type": "select",
+            "options": [
+                "Fixe",
+                "Négociable",
+                "À partir de"
+            ],
+            "required": true
+        },
+        {
+            "name": "price",
+            "label": "Prix",
+            "type": "number",
+            "placeholder": "Ex: 350000",
+            "min": 0,
+            "required": true
+        },
+        {
+            "name": "description",
+            "label": "Description détaillée",
+            "type": "textarea",
+            "placeholder": "Ajoutez plus de détails : état général, accessoires inclus (trépied, sacoche, batterie...), durée d’utilisation...",
+            "required": true
+        }
+    ]
+}

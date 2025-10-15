@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fcfcfc;
+            padding: 20px;
+            color: #333;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fcfcfc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #417abc, #8cb7df);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>⚠️ Votre compte AdsCity sera bientôt désactivé</h1>
+        </div>
+
+        <div class="content">
+            <p>Bonjour <strong>
+                    <%= firstName %>
+                        <%= lastName %>
+                </strong>,</p>
+
+            <p>Nous avons remarqué que vous n'avez pas utilisé votre compte AdsCity depuis plusieurs mois.</p>
+            <p>Pour des raisons de sécurité et de performance, les comptes inactifs depuis plus de 6 mois sont
+                automatiquement désactivés.</p>
+            <p><strong>Si vous souhaitez garder votre compte actif, connectez-vous avant les 15 prochains
+                    jours.</strong></p>
+
+            <p>Cordialement,</p>
+            <p>L'équipe de Gestion des Comptes AdsCity</p>
+        </div>
+
+        <div class="footer">
+            <p>
+                <strong>Cet email a été envoyé automatiquement par notre système de notification</strong><br>
+                AdsCity - Équipe de Gestion des Comptes<br>
+                Support Client : support@adscity.net
+            </p>
+            <p style="margin-top: 15px;">
+                © <%= year %> AdsCity. Tous droits réservés. Cet email a été envoyé à <%= email %>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
