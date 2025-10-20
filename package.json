@@ -1,0 +1,18 @@
+{
+    "name": "adscity-monorepo",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "concurrently \"npm run dev --workspace=apps/api\" \"npm run dev --workspace=apps/app\"",
+        "build": "npm run build --workspaces",
+        "install:all": "npm install --workspaces",
+        "deploy:staging": "docker-compose -f docker-compose.staging.yml up -d",
+        "deploy:production": "docker-compose -f docker-compose.production.yml up -d"
+    },
+    "workspaces": [
+        "apps/*",
+        "shared/*"
+    ],
+    "devDependencies": {
+        "concurrently": "^7.6.0"
+    }
+}

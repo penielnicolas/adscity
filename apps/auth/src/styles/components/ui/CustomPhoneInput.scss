@@ -1,0 +1,73 @@
+@import '../fonts';
+@import '../variables';
+@import '../mixins';
+
+.custom-phone-input {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    border-radius: 8px;
+    padding: 10px 12px;
+    width: 100%;
+    margin-bottom: $spacing-lg;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus-within {
+        border-color: #007bff; // ta couleur principale
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    }
+
+    .input-icon {
+        position: absolute;
+        left: $spacing-lg;
+        top: 15px;
+        color: $gray-400;
+        // font-size: 1rem;
+        z-index: 2;
+        @include transition(color);
+    }
+
+    .prefix {
+        font-size: 15px;
+        color: #333;
+        white-space: nowrap;
+        margin-left: 2.5rem;
+        font-family: 'Ubuntu', sans-serif;
+        font-family: $font-light;
+    }
+
+    input {
+        border: none;
+        outline: none;
+        flex: 1;
+        font-size: 15px;
+        padding: 4px 0;
+        background: transparent;
+        color: #111;
+        font-family: 'Ubuntu', sans-serif;
+        font-family: $font-light;
+
+        &::placeholder {
+            color: #bbb;
+        }
+    }
+
+    &.error,
+    input.error {
+        border-color: #e63946;
+
+        &::placeholder {
+            color: #e63946;
+        }
+    }
+
+    .error-text {
+        position: absolute;
+        margin-top: 40px;
+        font-size: 12px;
+        color: #e63946;
+    }
+}

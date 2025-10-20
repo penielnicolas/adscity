@@ -1,0 +1,117 @@
+@import '../fonts';
+@import '../variables';
+@import '../mixins';
+
+.security {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 0;
+    margin-top: 2rem;
+
+    .card {
+        padding: 1.25rem;
+    }
+
+    .two-factor__header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    /* === Password Section === */
+    .change-password__status {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #4b5563;
+
+        button {
+            margin-left: auto;
+        }
+    }
+
+    .change-password__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: #374151;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid #d1d5db;
+            font-size: 0.9rem;
+
+            &:focus {
+                outline: none;
+                border-color: #2563eb;
+                box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+            }
+        }
+
+        .change-password__form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+    }
+
+    /* === Two Factor Section === */
+    .two-factor__status-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .two-factor__status {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+
+        &-icon {
+            margin-top: 0.25rem;
+
+            svg {
+                width: 22px;
+                height: 22px;
+
+                &.enabled {
+                    color: #16a34a;
+                }
+
+                &.disabled {
+                    color: #dc2626;
+                }
+            }
+        }
+
+        &-text {
+            p:first-child {
+                font-weight: 600;
+                margin-bottom: 0.25rem;
+            }
+
+            p:last-child {
+                font-size: 0.85rem;
+                color: #6b7280;
+            }
+        }
+    }
+}

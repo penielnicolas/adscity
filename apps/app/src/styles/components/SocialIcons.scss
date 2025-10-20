@@ -1,0 +1,53 @@
+@import '../fonts';
+@import '../mixins';
+@import '../variables';
+
+.social-icons {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 22px;
+        color: #555;
+        // background: #f5f5f5;
+        border-radius: 50%;
+        width: 42px;
+        height: 42px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            transform: scale(1.1);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Couleurs spécifiques par réseau */
+        &.facebook:hover {
+            background: #1877f2;
+        }
+
+        &.twitter:hover {
+            background: #000;
+        }
+
+        &.linkedin:hover {
+            background: #0077b5;
+        }
+
+        &.instagram:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        &.youtube:hover {
+            background: #ff0000;
+        }
+    }
+}

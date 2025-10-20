@@ -1,0 +1,13 @@
+@import '../../fonts';
+@import '../../variables';
+@import '../../mixins';
+
+.footer {
+    background-color: $gray-300;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    font-family: $font-family-primary;
+    font-weight: $font-light;
+}

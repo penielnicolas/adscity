@@ -1,0 +1,114 @@
+@import '../../fonts';
+@import '../../mixins';
+@import '../../variables';
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    line-height: 1;
+    gap: 0.25rem;
+    transition: background-color 0.2s, transform 0.1s;
+
+    &__icon {
+        width: 1em;
+        height: 1em;
+    }
+
+    &__label {
+        white-space: nowrap;
+    }
+
+    &__count {
+        background: #dc2626;
+        color: #fff;
+        font-size: 0.7em;
+        font-weight: 600;
+        border-radius: 9999px;
+        padding: 0.1rem 0.45rem;
+        margin-left: 0.4rem;
+        line-height: 1;
+        min-width: 1.2rem;
+        text-align: center;
+    }
+
+    &--clickable {
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(1.1);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    // tailles de base
+    &--sm {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    &--md {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    &--lg {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    // arrondis
+    &--rounded-none {
+        border-radius: 0;
+    }
+
+    &--rounded-sm {
+        border-radius: 4px;
+    }
+
+    &--rounded-md {
+        border-radius: 8px;
+    }
+
+    &--rounded-lg {
+        border-radius: 12px;
+    }
+
+    &--rounded-full {
+        border-radius: 9999px;
+    }
+
+    // variants
+    &--default {
+        background: #f4f4f5;
+        color: #111;
+    }
+
+    &--primary {
+        background: #2563eb;
+        color: #fff;
+    }
+
+    &--secondary {
+        background: #64748b;
+        color: #fff;
+    }
+
+    &--success {
+        background: #16a34a;
+        color: #fff;
+    }
+
+    &--warning {
+        background: #f59e0b;
+        color: #fff;
+    }
+
+    &--danger {
+        background: #dc2626;
+        color: #fff;
+    }
+}

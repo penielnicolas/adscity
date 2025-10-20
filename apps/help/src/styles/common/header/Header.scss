@@ -1,0 +1,132 @@
+@import '../../fonts';
+@import '../../variables';
+@import '../../mixins';
+
+.header {
+    width: 100%;
+    background-color: $two;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: $font-family-primary;
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1.5rem;
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+
+            .menu-button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 0.25rem;
+                border-radius: 6px;
+                transition: background 0.2s;
+
+                &:hover {
+                    background: #f3f4f6;
+                }
+            }
+
+            .logo-title {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                .title {
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    color: #1f2937;
+                }
+            }
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+
+            a {
+                color: $white;
+                font-size: 0.95rem;
+                font-weight: 500;
+                text-decoration: none;
+                transition: color 0.2s;
+
+                &:hover {
+                    color: $white;
+                }
+
+                &.active {
+                    color: #2563eb;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 6px;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                color: #374151;
+            }
+
+            &:hover {
+                background: #f3f4f6;
+            }
+        }
+    }
+
+    // Mobile Navigation
+    .mobile-nav {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        border-top: 1px solid #e5e7eb;
+        padding: 1rem;
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            a {
+                color: #374151;
+                font-size: 1rem;
+                text-decoration: none;
+
+                &:hover {
+                    color: #2563eb;
+                }
+            }
+        }
+    }
+
+    // Responsive
+    @media (max-width: 768px) {
+        .header-content {
+            nav {
+                display: none;
+            }
+        }
+
+        .mobile-nav {
+            display: flex;
+        }
+    }
+}

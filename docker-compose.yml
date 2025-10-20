@@ -1,0 +1,189 @@
+# docker-compose.yml
+version: "3.8"
+
+services:
+  # Database
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: ads-city-db
+      POSTGRES_PASSWORD: RPUZIHJuX4keNwCN
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - adscity-network
+
+  redis:
+    image: redis:alpine
+    networks:
+      - adscity-network
+
+  # Applications
+  api:
+    build: ./apps/api
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://postgres:RPUZIHJuX4keNwCN@localhost:5432/ads-city-db
+      - REDIS_URL=redis://redis:6379
+      - SMTP_PORT=465
+      - SMTP_SECURE=true
+      - SMTP_HOST=mail.hosting.reg.ru
+      - SMTP_MAIL=support@adscity.net
+      - SMTP_PASS=support@adscity.net
+      - CLOUDINARY_CLOUD_NAME=duqadxv7q
+      - CLOUDINARY_API_KEY=555482847614821
+      - CLOUDINARY_API_SECRET=PlWS9nEttsbsdxvtlKMzGSU0fA0
+      - CLOUDINARY_URL=cloudinary://555482847614821:PlWS9nEttsbsdxvtlKMzGSU0fA0
+      - VAPID_PUBLIC_KEY=BAr_Dc-0Nu2dN4bhbBdVv-Ii8LtyNbwPS4iFJU3tZbvho-1-w9BajNW3aF4fy-sLRv_vNHMQISzOeerPvQUa51M
+      - VAPID_PRIVATE_KEY=wMUz28UMU1CyMqvhy6bNRSqXnX1qZOaHEXcNm3_FRoA
+      - RECAPTCHA_SECRET_KEY=6LeAMhYrAAAAAGDVuTbI663JZ4ehqWydr3Lpc3T-
+      - RATE_LIMIT_WINDOW_MS=900000
+      - RATE_LIMIT_MAX_REQUESTS=100
+      - SUPPORT_TEAM_EMAIL=support@adscity.net
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - adscity-network
+
+  app:
+    build: ./apps/app
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_APP_URL=https://adscity.net
+      - REACT_APP_AUTH_URL=https://auth.adscity.net
+      - REACT_APP_ID_URL=https://id.adscity.net
+      - REACT_APP_HELP_URL=https://help.adscity.net
+      - REACT_APP_DASHBOARD_URL=https://dashboard.adscity.net
+      - REACT_APP_ADMIN_URL=https://admin.adscity.net
+      - REACT_APP_API_URL=https://api.adscity.net
+    networks:
+      - adscity-network
+
+  auth:
+    build: ./apps/auth
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://postgres:RPUZIHJuX4keNwCN@localhost:5432/ads-city-db
+      - REACT_APP_APP_URL=https://adscity.net
+      - REACT_APP_AUTH_URL=https://auth.adscity.net
+      - REACT_APP_ID_URL=https://id.adscity.net
+      - REACT_APP_HELP_URL=https://help.adscity.net
+      - REACT_APP_DASHBOARD_URL=https://dashboard.adscity.net
+      - REACT_APP_ADMIN_URL=https://admin.adscity.net
+      - REACT_APP_API_URL=https://api.adscity.net
+    depends_on:
+      - postgres
+    networks:
+      - adscity-network
+
+  dashboard:
+    build: ./apps/dashboard
+    ports:
+      - "3004:3004"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://postgres:RPUZIHJuX4keNwCN@localhost:5432/ads-city-db
+      - REACT_APP_APP_URL=https://adscity.net
+      - REACT_APP_AUTH_URL=https://auth.adscity.net
+      - REACT_APP_ID_URL=https://id.adscity.net
+      - REACT_APP_HELP_URL=https://help.adscity.net
+      - REACT_APP_DASHBOARD_URL=https://dashboard.adscity.net
+      - REACT_APP_ADMIN_URL=https://admin.adscity.net
+      - REACT_APP_API_URL=https://api.adscity.net
+    depends_on:
+      - postgres
+    networks:
+      - adscity-network
+  
+  help:
+    build: ./apps/help
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://postgres:RPUZIHJuX4keNwCN@localhost:5432/ads-city-db
+      - REACT_APP_APP_URL=https://adscity.net
+      - REACT_APP_AUTH_URL=https://auth.adscity.net
+      - REACT_APP_ID_URL=https://id.adscity.net
+      - REACT_APP_HELP_URL=https://help.adscity.net
+      - REACT_APP_DASHBOARD_URL=https://dashboard.adscity.net
+      - REACT_APP_ADMIN_URL=https://admin.adscity.net
+      - REACT_APP_API_URL=https://api.adscity.net
+    depends_on:
+      - postgres
+    networks:
+      - adscity-network
+
+  id:
+    build: ./apps/id
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://postgres:RPUZIHJuX4keNwCN@localhost:5432/ads-city-db
+      - REACT_APP_APP_URL=https://adscity.net
+      - REACT_APP_AUTH_URL=https://auth.adscity.net
+      - REACT_APP_ID_URL=https://id.adscity.net
+      - REACT_APP_HELP_URL=https://help.adscity.net
+      - REACT_APP_DASHBOARD_URL=https://dashboard.adscity.net
+      - REACT_APP_ADMIN_URL=https://admin.adscity.net
+      - REACT_APP_API_URL=https://api.adscity.net
+    depends_on:
+      - postgres
+    networks:
+      - adscity-network
+
+  admin:
+    build: ./apps/admin
+    ports:
+      - "3005:3005"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://postgres:RPUZIHJuX4keNwCN@localhost:5432/ads-city-db
+      - REACT_APP_APP_URL=https://adscity.net
+      - REACT_APP_AUTH_URL=https://auth.adscity.net
+      - REACT_APP_ID_URL=https://id.adscity.net
+      - REACT_APP_HELP_URL=https://help.adscity.net
+      - REACT_APP_DASHBOARD_URL=https://dashboard.adscity.net
+      - REACT_APP_ADMIN_URL=https://admin.adscity.net
+      - REACT_APP_API_URL=https://api.adscity.net
+    depends_on:
+      - postgres
+    networks:
+      - adscity-network
+
+  # ... autres services (dashboard, help, id, admin)
+
+  # Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+    depends_on:
+      - app
+      - api
+      - auth
+      - dashboard
+      - help
+      - id
+      - admin
+    networks:
+      - adscity-network
+
+volumes:
+  postgres_data:
+
+networks:
+  adscity-network:
+    driver: bridge

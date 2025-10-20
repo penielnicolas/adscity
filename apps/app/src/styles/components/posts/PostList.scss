@@ -1,0 +1,83 @@
+@import '../../fonts';
+@import '../../mixins';
+@import '../../variables';
+
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 🖥️ Ordinateur (4 colonnes)
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    justify-items: center;
+    align-items: start;
+    animation: fadeIn 0.4s ease-in-out;
+
+    .post-card {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    // État vide
+    &.empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 300px;
+        color: #777;
+
+        svg {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #bbb;
+        }
+
+        p {
+            font-size: 0.95rem;
+        }
+    }
+}
+
+// ===== Animation =====
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// ===== Responsive =====
+@media (max-width: 1200px) {
+    .post-list {
+        grid-template-columns: repeat(4, 1fr); // 💻 Tablette / moyen écran
+        gap: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-list {
+        grid-template-columns: repeat(3, 1fr); // 📱 Smartphone
+        gap: 1rem;
+        padding: 1rem 0;
+
+        .post-card {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 567px) {
+    .post-list {
+        grid-template-columns: repeat(2, 1fr); // 📱 Smartphone
+        gap: 0.5rem;
+        padding: 1rem 0;
+
+        .post-card {
+            max-width: 100%;
+        }
+    }
+}

@@ -1,0 +1,172 @@
+@import '../../fonts';
+@import '../../mixins';
+@import '../../variables';
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .input {
+        width: 100%;
+        padding: $spacing-lg $spacing-lg $spacing-lg 3rem;
+        font-weight: $font-light;
+        font-size: $font-size-base;
+        font-family: $font-family-primary;
+        border: 2px solid $gray-200;
+        border-radius: $radius-lg;
+        background: $white;
+        color: $gray-900;
+        @include transition(all, 0.2s);
+        position: relative;
+        outline: none;
+
+        &:focus {
+            @include input-focus;
+
+            &::placeholder {
+                color: $gray-300;
+            }
+        }
+
+        &:disabled {
+            background-color: #f0f2f5;
+            color: #8a8d91;
+            cursor: not-allowed;
+
+            &::placeholder {
+                color: $gray-400;
+                @include transition(color);
+            }
+        }
+
+        &::placeholder {
+            color: $gray-400;
+            @include transition(color);
+        }
+
+        // Variantes avec icônes
+        &--with-icon {
+            padding-left: 3rem;
+        }
+
+        &--with-right-element {
+            padding-right: 3rem;
+        }
+
+        // États
+        &--error {
+            border-color: $error-color;
+            background: rgba($error-color, 0.05);
+
+            &:focus {
+                border-color: $error-color;
+                box-shadow: 0 0 0 3px rgba($error-color, 0.1);
+            }
+        }
+
+        &--success {
+            border-color: $success-color;
+            background: rgba($success-color, 0.05);
+
+            &:focus {
+                border-color: $success-color;
+                box-shadow: 0 0 0 3px rgba($success-color, 0.1);
+            }
+        }
+    }
+
+    .input-icon-left {
+        position: absolute;
+        left: 1rem;
+        color: #8a8d91;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+
+        .input:focus+& {
+            color: $color-primary;
+        }
+
+        .input--error+& {
+            color: $color-error;
+        }
+
+        .input--success+& {
+            color: $color-success;
+        }
+
+        .input:disabled+& {
+            color: #8a8d91;
+        }
+    }
+
+    .input-right-element {
+        position: absolute;
+        right: 1rem;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+
+        // Style pour le bouton de toggle password
+        .password-toggle {
+            background: none;
+            border: none;
+            color: #8a8d91;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+
+            &:hover {
+                color: $color-primary;
+                background-color: #f0f2f5;
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+                opacity: 0.5;
+
+                &:hover {
+                    color: #8a8d91;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    // Message d'erreur
+    .input-error-message {
+        color: $color-error;
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+}
+
+// Responsive
+@media (max-width: 768px) {
+    .input {
+        padding: 0.625rem 0.875rem;
+        font-size: 1rem; // Évite le zoom sur iOS
+    }
+
+    .input--with-icon {
+        padding-left: 2.5rem;
+    }
+
+    .input--with-right-element {
+        padding-right: 2.5rem;
+    }
+
+    .input-icon-left {
+        left: 0.875rem;
+    }
+
+    .input-right-element {
+        right: 0.875rem;
+    }
+}

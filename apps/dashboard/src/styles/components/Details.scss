@@ -1,0 +1,16 @@
+@import '../fonts';
+@import '../variables';
+@import '../mixins';
+
+.details {
+    max-width: 600px;
+    margin: auto;
+
+    .form-navigation {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: $spacing-md;
+        margin-top: 1rem;
+    }
+}

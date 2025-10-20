@@ -1,0 +1,126 @@
+@import '../fonts';
+@import '../variables';
+@import '../mixins';
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: $two; // Couleur de fond
+    color: $white;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    z-index: 1000;
+    font-family: $font-family-primary;
+
+    &.open {
+        transform: translateX(0);
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .sidebar-content {
+        padding: 20px;
+
+        .logo-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+
+            .logo {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+            .close-button {
+                background: none;
+                border: none;
+                color: $white;
+                cursor: pointer;
+            }
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20px;
+
+            a {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                color: $white;
+                text-decoration: none;
+                border-radius: 5px;
+
+                .external-link {
+                    margin-left: auto;
+                }
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+
+                &.active {
+                    background-color: rgba(255, 255, 255, 0.2);
+
+                    .nav-label {
+                        font-size: 13px;
+                        font-weight: $font-regular;
+                    }
+                }
+
+                .nav-icon {
+                    margin-right: 10px;
+                }
+
+                .nav-label {
+                    font-size: 13px;
+                    font-weight: $font-light;
+                }
+            }
+        }
+
+        .user-infos {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: auto;
+            align-items: center;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            text-align: center;
+
+            .user-name {
+                font-size: 1rem;
+                font-weight: $font-medium;
+                margin: 5px 0 0 0;
+                color: $white;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
+            }
+
+            .user-email {
+                font-size: 0.875rem;
+                color: $white;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
+            }
+        }
+    }
+}

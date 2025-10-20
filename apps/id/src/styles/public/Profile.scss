@@ -1,0 +1,361 @@
+@import '../fonts';
+@import '../variables';
+@import '../mixins';
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: $font-family-primary;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .label-value {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; // pour pousser le chevron à droite
+        gap: 0.5rem;
+        padding: 5px;
+        border-radius: 8px;
+
+        &:hover {
+            cursor: pointer;
+            background: $gray-200;
+        }
+
+        .text-block {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            // Mobile : empile label + value et garde le chevron sur la 2ème ligne
+            @media (max-width: 768px) {
+                flex-direction: column; // Nom au-dessus, valeur en-dessous
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .label {
+                font-weight: 600;
+                width: 200px;
+            }
+
+            .value {
+                font-weight: 400;
+            }
+        }
+
+        .chevron {
+            flex-shrink: 0; // évite que l’icône se compresse
+
+            @media (max-width: 768px) {
+                // align-self: flex-end; // place le chevron à droite de la valeur
+            }
+        }
+    }
+
+
+    .pass-word {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        span {
+            font-size: $font-size-lg;
+        }
+
+        .flex {
+            display: flex;
+
+            svg {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .avatar-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .profile-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .form-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+
+            .avatar-wrapper {
+                position: relative;
+
+                img,
+                .avatar {
+                    border-radius: 50%;
+                    border: 3px solid #eee;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .avatar-edit-icon {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    background: #fff;
+                    border: 1px solid #ddd;
+                    border-radius: 50%;
+                    padding: 0.3rem;
+                    cursor: pointer;
+                    transition: background 0.2s ease;
+
+                    &:hover {
+                        background: #f5f5f5;
+                    }
+
+                    .avatar-upload-label {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+
+                        input.hidden-input {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .profile-meta {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+
+                .meta-text {
+                    font-size: 0.875rem;
+                    color: #666;
+                }
+            }
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+
+            .form-field {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                .field-label {
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    color: #333;
+                }
+
+                .input-wrapper {
+                    width: 100%;
+                }
+
+                .field-value {
+                    font-size: 1rem;
+                    color: #444;
+                }
+
+                .input-error-message {
+                    font-size: 0.8rem;
+                    color: #e63946;
+                }
+            }
+        }
+
+        .form-footer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1rem;
+        }
+    }
+
+    .activity-card {
+        .activity-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .activity-item {
+                display: flex;
+                gap: 1rem;
+
+                .activity-icon-column {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    min-width: 40px;
+
+                    .activity-icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        color: #fff;
+
+                        &--primary {
+                            background-color: #007bff;
+                        }
+
+                        &--success {
+                            background-color: #28a745;
+                        }
+                    }
+
+                    .activity-line {
+                        flex: 1;
+                        width: 2px;
+                        background: #e0e0e0;
+                        margin-top: 4px;
+                    }
+                }
+
+                .activity-details {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.25rem;
+
+                    .activity-title {
+                        font-weight: 600;
+                        font-size: 0.95rem;
+                    }
+
+                    .activity-subtitle {
+                        font-size: 0.85rem;
+                        color: #666;
+                    }
+
+                    .activity-date {
+                        font-size: 0.75rem;
+                        color: #999;
+                    }
+                }
+            }
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 1rem;
+        }
+    }
+}
+
+.profile-name {
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    font-family: $font-family-primary;
+
+    .back-button {
+        display: flex;
+        align-items: center;
+
+        .svg-wrap {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            @include transition();
+
+            &:hover {
+                background: $gray-200;
+                font-family: $font-family-primary;
+            }
+        }
+
+        p {
+            margin-left: 18px;
+            font-size: $font-size-lg;
+            font-weight: $font-weight-medium;
+        }
+    }
+
+    .card-wrap {
+        max-width: 600px;
+        margin: auto;
+
+        .label-value {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; // pour pousser le chevron à droite
+            gap: 0.5rem;
+            padding: 5px;
+            border-radius: 8px;
+
+
+
+            .text-block {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                // Mobile : empile label + value et garde le chevron sur la 2ème ligne
+                @media (max-width: 768px) {
+                    flex-direction: column; // Nom au-dessus, valeur en-dessous
+                    align-items: flex-start;
+                    gap: 0.25rem;
+                }
+
+                .label {
+                    font-weight: 600;
+                    width: 200px;
+                }
+
+                .value {
+                    font-weight: 400;
+                }
+            }
+
+            .chevron {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                flex-shrink: 0; // évite que l’icône se compresse
+                padding: 10px;
+                border-radius: 8px;
+
+                &:hover {
+                    cursor: pointer;
+                    background: $gray-200;
+                }
+
+                @media (max-width: 768px) {
+                    // align-self: flex-end; // place le chevron à droite de la valeur
+                }
+            }
+        }
+
+    }
+
+    .edit-footer {
+        display: flex;
+        gap: 15px;
+        justify-content: flex-end;
+    }
+}

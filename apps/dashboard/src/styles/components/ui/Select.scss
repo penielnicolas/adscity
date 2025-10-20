@@ -1,0 +1,241 @@
+@import '../../fonts';
+@import '../../mixins';
+@import '../../variables';
+
+// styles/components/ui/Select.scss
+@import '../../variables';
+@import '../../mixins';
+
+.select-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .select {
+        width: 100%;
+        padding: 0.75rem 2.5rem;
+        font-size: $font-size-base;
+        font-family: $font-family-primary;
+        border: 2px solid #e4e6eb;
+        border-radius: 8px;
+        background-color: #ffffff;
+        color: #1c1e21;
+        transition: all 0.2s ease;
+        outline: none;
+        appearance: none;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23606770'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 1rem;
+
+        &:focus {
+            border-color: $color-primary;
+            box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+        }
+
+        &:disabled {
+            background-color: #f0f2f5;
+            color: #8a8d91;
+            cursor: not-allowed;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238a8d91'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        }
+
+        // Variante avec icône
+        &--with-icon {
+            padding-left: 3rem;
+        }
+
+        // États
+        &--error {
+            border-color: $color-error;
+
+            &:focus {
+                border-color: $color-error;
+                box-shadow: 0 0 0 3px rgba($color-error, 0.1);
+            }
+        }
+
+        &--success {
+            border-color: $color-success;
+
+            &:focus {
+                border-color: $color-success;
+                box-shadow: 0 0 0 3px rgba($color-success, 0.1);
+            }
+        }
+
+        // Style pour les options
+        option {
+            padding: 0.5rem;
+            color: #1c1e21;
+
+            &:disabled {
+                color: #8a8d91;
+                font-style: italic;
+            }
+        }
+
+        // Groupes d'options
+        optgroup {
+            font-weight: 600;
+            color: #1c1e21;
+
+            option {
+                padding-left: 1rem;
+                font-weight: normal;
+            }
+        }
+
+        // Label pour le select
+        .select-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: $font-weight-light;
+            color: $color-text;
+            font-size: 0.875rem;
+        }
+    }
+
+    .select-icon-left {
+        position: absolute;
+        left: 1rem;
+        color: #8a8d91;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        pointer-events: none;
+
+        .select:focus~& {
+            color: $color-primary;
+        }
+
+        .select--error~& {
+            color: $color-error;
+        }
+
+        .select--success~& {
+            color: $color-success;
+        }
+
+        .select:disabled~& {
+            color: #8a8d91;
+        }
+    }
+
+    // Message d'erreur
+    .select-error-message {
+        color: $color-error;
+        font-family: $font-family-primary;
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+}
+
+
+// Variantes de taille
+.select {
+    &--small {
+        padding: 0.5rem 0.75rem;
+        padding-right: 2rem;
+        font-size: 0.875rem;
+        background-size: 0.875rem;
+
+        &.select--with-icon {
+            padding-left: 2.5rem;
+        }
+
+        ~.select-icon {
+            left: 0.75rem;
+
+            svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+
+    &--large {
+        padding: 1rem 1.25rem;
+        padding-right: 3rem;
+        font-size: 1.125rem;
+        background-size: 1.125rem;
+
+        &.select--with-icon {
+            padding-left: 3.5rem;
+        }
+
+        ~.select-icon {
+            left: 1.25rem;
+
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+// Groupes de selects
+.select-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &--horizontal {
+        flex-direction: row;
+        gap: 1rem;
+
+        @include respond-below(sm) {
+            flex-direction: column;
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 768px) {
+    .select {
+        padding: 0.625rem 0.875rem;
+        padding-right: 2.25rem;
+        font-size: 1rem; // Évite le zoom sur iOS
+
+        &.select--with-icon {
+            padding-left: 2.75rem;
+        }
+    }
+
+    .select-icon {
+        left: 0.875rem;
+    }
+}
+
+// Animation pour le focus
+@keyframes selectFocus {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.select:focus {
+    animation: selectFocus 0.2s ease;
+}
+
+// Support pour les navigateurs qui ne supportent pas appearance: none
+@supports not (appearance: none) {
+    .select {
+        padding-right: 1rem;
+        background-image: none;
+    }
+}

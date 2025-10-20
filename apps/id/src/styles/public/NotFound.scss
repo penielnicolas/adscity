@@ -1,0 +1,63 @@
+@import '../fonts';
+@import '../variables';
+@import '../mixins';
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+
+    .error-image {
+        width: 300px;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 6rem;
+        color: #dc3545;
+        margin: 0;
+
+        @media (max-width: 576px) {
+            font-size: 4rem;
+        }
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin: 20px 0;
+
+        @media (max-width: 576px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: $dark;
+
+        @media (max-width: 576px) {
+            font-size: 0.9rem;
+        }
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: $white;
+        background-color: $two;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: $font-light;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $three;
+        }
+    }
+}

@@ -1,0 +1,296 @@
+@import '../../fonts';
+@import '../../mixins';
+@import '../../variables';
+
+.label-container {
+    display: inline;
+    position: relative;
+
+    .label-toggle {
+        background: none;
+        border: none;
+        color: $color-primary;
+        font-family: $font-family-primary;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-regular;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        margin-left: 0.25rem;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background-color: #f0f2f5;
+            color: darken($color-primary, 10%);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba($color-primary, 0.3);
+        }
+    }
+
+    // Pour les labels avec limite de lignes
+    .label--line-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: var(--lines, 2);
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        &.label--expanded {
+            -webkit-line-clamp: unset;
+            display: block;
+        }
+    }
+
+    // Style pour le texte tronqué
+    .label--truncated {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 1.5em;
+            background: linear-gradient(90deg, transparent 0%, white 50%);
+        }
+
+        [data-theme="dark"] &::after {
+            background: linear-gradient(90deg, transparent 0%, #242526 50%);
+        }
+    }
+    .label {
+        margin: 0;
+        padding: 0;
+        line-height: 1.4;
+        color: $color-text;
+        font-family: $font-family-primary;
+        transition: color 0.2s ease;
+    
+        // Tailles
+        &--h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+    
+        &--h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.875rem;
+        }
+    
+        &--h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+        }
+    
+        &--h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 0.625rem;
+        }
+    
+        &--h5 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+    
+        &--h6 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+    
+        &--p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+    
+        &--small {
+            font-size: 0.875rem;
+        }
+    
+        &--xsmall {
+            font-size: 0.75rem;
+        }
+    
+        // Poids de police
+        &--light {
+            font-weight: 300;
+        }
+    
+        &--normal {
+            font-weight: 400;
+        }
+    
+        &--medium {
+            font-weight: 500;
+        }
+    
+        &--semibold {
+            font-weight: 600;
+        }
+    
+        &--bold {
+            font-weight: 700;
+        }
+    
+        &--black {
+            font-weight: 900;
+        }
+    
+        // Alignement
+        &--align-left {
+            text-align: left;
+        }
+    
+        &--align-center {
+            text-align: center;
+        }
+    
+        &--align-right {
+            text-align: right;
+        }
+    
+        &--align-justify {
+            text-align: justify;
+        }
+    
+        // Truncation
+        &--truncate {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    
+        // Multi-line truncation
+        &:not(.label--truncate) {
+            &.label--line-clamp {
+                display: -webkit-box;
+                -webkit-line-clamp: var(--lines, 2);
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+    
+        // Couleurs sémantiques
+        &--primary {
+            color: $color-primary;
+        }
+    
+        &--secondary {
+            color: $color-secondary;
+        }
+    
+        &--success {
+            color: $color-success;
+        }
+    
+        &--warning {
+            color: $color-warning;
+        }
+    
+        &--error {
+            color: $color-error;
+        }
+    
+        &--muted {
+            color: $color-text-light;
+        }
+    
+        // États interactifs
+        &--clickable {
+            cursor: pointer;
+    
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    
+        // Variantes de style
+        &--uppercase {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    
+        &--lowercase {
+            text-transform: lowercase;
+        }
+    
+        &--capitalize {
+            text-transform: capitalize;
+        }
+    
+        &--italic {
+            font-style: italic;
+        }
+    
+        &--underline {
+            text-decoration: underline;
+        }
+    
+        // Espacement
+        &--spacing-tight {
+            line-height: 1.2;
+        }
+    
+        &--spacing-normal {
+            line-height: 1.4;
+        }
+    
+        &--spacing-loose {
+            line-height: 1.6;
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 768px) {
+    .label {
+        &--h1 {
+            font-size: 2rem;
+        }
+
+        &--h2 {
+            font-size: 1.75rem;
+        }
+
+        &--h3 {
+            font-size: 1.5rem;
+        }
+
+        &--h4 {
+            font-size: 1.25rem;
+        }
+
+        &--h5 {
+            font-size: 1.125rem;
+        }
+
+        &--h6 {
+            font-size: 1rem;
+        }
+    }
+}
+
+// Mode sombre
+[data-theme="dark"] {
+    .label {
+        color: #e4e6eb;
+
+        &--muted {
+            color: #b0b3b8;
+        }
+    }
+}

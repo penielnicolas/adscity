@@ -1,0 +1,57 @@
+@import '../fonts';
+@import '../variables';
+@import '../mixins';
+
+.page-header {
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+
+    &__breadcrumb {
+        font-size: 0.9rem;
+        color: #6b7280;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: $font-size-base;
+        font-weight: $font-weight-medium;
+
+        div:first-child {
+            cursor: pointer;
+        }
+
+        .location {
+            font-size: $font-size-base;
+            color: #6b7280;
+            color: $dark;
+            font-weight: $font-weight-medium;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        margin-top: 2rem;
+
+        .header__title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__title {
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: #111827;
+        margin: 0;
+    }
+
+    &__description {
+        font-size: 1rem;
+        color: #4b5563;
+        margin: 0;
+        font-weight: $font-light;
+    }
+}

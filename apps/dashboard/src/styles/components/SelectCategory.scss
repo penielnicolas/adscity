@@ -1,0 +1,43 @@
+@import '../fonts';
+@import '../variables';
+@import '../mixins';
+
+.select-cat {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+    font-family: $font-family-primary;
+
+    .separator {
+        height: 1px;
+        background-color: $color-border;
+        margin: $spacing-md 0;
+    }
+
+    .contact-support {
+        p {
+            text-align: center;
+            font-size: 13px;
+            color: $dark;
+
+            a {
+                text-decoration: none;
+                color: $primary-hover;
+                font-weight: $font-weight-medium;
+                &:hover {
+                    color: $primary-color;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .form-navigation {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: $spacing-md;
+    }
+}

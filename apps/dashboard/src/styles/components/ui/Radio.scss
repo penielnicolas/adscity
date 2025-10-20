@@ -1,0 +1,138 @@
+@import '../../fonts';
+@import '../../mixins';
+@import '../../variables';
+
+.radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.2s ease;
+    position: relative;
+
+    &--disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    // Variantes de taille
+    &--small {
+        .radio__checkmark {
+            height: 16px;
+            width: 16px;
+
+            &::after {
+                top: 3px;
+                left: 3px;
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        .radio__label {
+            font-size: 0.875rem;
+        }
+    }
+
+    &--large {
+        .radio__checkmark {
+            height: 24px;
+            width: 24px;
+
+            &::after {
+                top: 5px;
+                left: 5px;
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        .radio__label {
+            font-size: 1rem;
+        }
+    }
+
+    // Variantes de couleur
+    &--primary .radio__input:checked~.radio__checkmark {
+        background-color: $color-primary;
+        border-color: $color-primary;
+    }
+
+    &--secondary .radio__input:checked~.radio__checkmark {
+        background-color: $color-secondary;
+        border-color: $color-secondary;
+    }
+
+    .radio__input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:focus~.radio__checkmark {
+            box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+            border-color: $color-primary;
+        }
+
+        &:checked~.radio__checkmark {
+            background-color: $color-primary;
+            border-color: $color-primary;
+
+            &::after {
+                display: block;
+            }
+        }
+
+        &:indeterminate~.radio__checkmark {
+            background-color: $color-primary;
+            border-color: $color-primary;
+
+            &::after {
+                display: block;
+                content: '';
+                width: 10px;
+                height: 2px;
+                background-color: white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 1px;
+            }
+        }
+
+        .radio--disabled & {
+            cursor: not-allowed;
+        }
+    }
+
+    .radio__checkmark {
+        position: relative;
+        height: 20px;
+        width: 20px;
+        background-color: #ffffff;
+        border: 2px solid #e4e6eb;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: none;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .radio:hover &:not(.radio--disabled) {
+            border-color: #b0b3b8;
+        }
+    }
+}

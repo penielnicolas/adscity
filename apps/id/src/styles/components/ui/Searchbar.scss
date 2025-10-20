@@ -1,0 +1,56 @@
+@import '../../fonts';
+@import '../../variables';
+@import '../../mixins';
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 18px;
+    padding: 10px 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus-within {
+        border-color: #0066ff;
+        box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.15);
+    }
+
+    &.left {
+        flex-direction: row; // icône à gauche
+
+        .searchbar-icon {
+            margin-right: 8px;
+        }
+    }
+
+    &.right {
+        flex-direction: row-reverse; // icône à droite
+
+        .searchbar-icon {
+            margin-left: 8px;
+        }
+    }
+
+    .searchbar-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #777;
+    }
+
+    .searchbar-input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        background: transparent;
+        color: #333;
+        font-size: $font-size-base;
+        font-family: $font-family-primary;
+
+        &::placeholder {
+            color: #aaa;
+        }
+    }
+}

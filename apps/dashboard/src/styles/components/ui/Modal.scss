@@ -1,0 +1,124 @@
+@import '../../fonts';
+@import '../../mixins';
+@import '../../variables';
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $modal-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-duration, visibility $transition-duration;
+    padding: 1rem;
+
+    &.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    // Animation fade
+    &.fade {
+        .modal-container {
+            opacity: 0;
+            transition: opacity $transition-duration, transform $transition-duration;
+        }
+
+        &.open .modal-container {
+            opacity: 1;
+        }
+    }
+
+    // Animation scale
+    &.scale {
+        .modal-container {
+            transform: scale(0.9);
+        }
+
+        &.open .modal-container {
+            transform: scale(1);
+        }
+    }
+
+    // Animation slide-up
+    &.slide-up {
+        .modal-container {
+            transform: translateY(100%);
+        }
+
+        &.open .modal-container {
+            transform: translateY(0);
+        }
+    }
+
+    // Animation slide-down
+    &.slide-down {
+        .modal-container {
+            transform: translateY(-100%);
+        }
+
+        &.open .modal-container {
+            transform: translateY(0);
+        }
+    }
+
+    .modal-container {
+        width: 100%;
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        background-color: $modal-overlay-bg;
+        overflow: hidden;
+        transform: translateY(20px);
+        transition: transform $transition-duration;
+
+        .open & {
+            transform: translateY(0);
+        }
+
+        // Tailles
+        &.sm {
+            max-width: 400px;
+        }
+
+        &.md {
+            max-width: 600px;
+        }
+
+        &.lg {
+            max-width: 800px;
+        }
+
+        &.fullscreen {
+            max-width: 95vw;
+            height: 95vh;
+        }
+
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.75rem;
+            cursor: pointer;
+            color: #6c757d;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+
+            &:hover {
+                color: #343a40;
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+        }
+    }
+}

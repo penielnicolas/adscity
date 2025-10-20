@@ -1,0 +1,80 @@
+@import '../fonts';
+@import '../variables';
+@import '../mixins';
+
+.dynamic-field {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+    margin: 1.5rem auto;
+
+    label {
+        font-weight: $font-regular;
+        margin-bottom: 0.5rem;
+        color: $gray-700;
+        font-size: 0.95rem;
+
+        .required-star {
+            color: #e63946;
+            margin-left: 4px;
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    input,
+    select,
+    textarea,
+    option {
+        font-family: 'Ubuntu', sans-serif;
+        padding: 0.65rem 0.9rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background-color: #fff;
+        color: $gray-600;
+        font-weight: $font-weight-light;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+        &:focus {
+            border-color: $two;
+            box-shadow: 0 0 0 2px rgba(29, 53, 87, 0.15);
+            outline: none;
+        }
+
+        &::placeholder {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+    }
+
+    select[multiple] {
+        height: auto;
+        min-height: 120px;
+        padding: 0.5rem;
+        font-size: 0.95rem;
+    }
+
+    .radio-group,
+    .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-top: 0.3rem;
+
+        label {
+            font-weight: $font-light;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: $gray-600;
+
+            input {
+                width: 1rem;
+                height: 1rem;
+                margin: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@import '../../fonts';
+@import '../../mixins';
+@import '../../variables';
+
+.card {
+    background-color: $card-bg;
+    border-radius: $card-border-radius;
+    box-shadow: $card-shadow;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-header {
+    padding: $card-header-padding;
+    background-color: $card-header-bg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $card-title-color;
+}
+
+.card-description {
+    margin: 0.5rem 0 0 0;
+    color: $card-description-color;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.card-body {
+    padding: $card-body-padding;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.card-footer {
+    padding: $card-footer-padding;
+    background-color: $card-footer-bg;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}

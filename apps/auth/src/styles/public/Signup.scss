@@ -1,0 +1,341 @@
+@import '../fonts';
+@import '../variables';
+@import '../mixins';
+
+.signup {
+    min-height: 100vh;
+    background: linear-gradient(135deg, $two 0%, $four 100%);
+    @include flex-center;
+    padding: $spacing-lg;
+    position: relative;
+    overflow: hidden;
+    font-family: $font-family-primary;
+
+    // Effet de particules en arrière-plan
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+            radial-gradient(circle at 25% 25%, rgba($white, 0.1) 2px, transparent 2px),
+            radial-gradient(circle at 75% 75%, rgba($white, 0.1) 2px, transparent 2px);
+        background-size: 50px 50px;
+        animation: float 20s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    // Variantes de fond
+    &--gradient-blue {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    &--gradient-purple {
+        background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+    }
+
+    &--gradient-green {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    }
+
+    &--solid {
+        background: $primary-color;
+    }
+
+    &--dark {
+        background: linear-gradient(135deg, $gray-900 0%, $gray-800 100%);
+    }
+
+    // Container principal
+    .container {
+        width: 100%;
+        max-width: 420px;
+        @include glass-effect;
+        border-radius: $radius-2xl;
+        @include card-shadow(4);
+        padding: $spacing-3xl;
+        position: relative;
+        animation: slideInUp 0.6s ease-out;
+
+        @media (max-width: $tablet) {
+            max-width: 380px;
+            padding: $spacing-xl;
+            margin: $spacing-lg;
+        }
+
+        @media (max-width: $mobile) {
+            width: 350px;
+            padding: $spacing-xl;
+            margin: $spacing-md;
+            border-radius: $radius-xl;
+        }
+
+        // Header de connexion
+        .header {
+            text-align: center;
+            margin-bottom: $spacing-3xl;
+
+            .title {
+                font-size: 2rem;
+                font-weight: 700;
+                color: $gray-900;
+                margin: 0 0 $spacing-sm;
+                background: linear-gradient(135deg, $gray-900, $gray-700);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+
+                @media (max-width: $mobile) {
+                    font-size: 1.75rem;
+                }
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                color: $gray-600;
+                margin: 0;
+                font-weight: 400;
+
+                @media (max-width: $mobile) {
+                    font-size: 0.875rem;
+                }
+            }
+        }
+
+        // Formulaire
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-md;
+
+            .step-content {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-xl;
+
+                .step-title {
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                    margin-bottom: $spacing-md;
+                    color: $gray-900;
+
+                    &.active {
+                        color: $two;
+                    }
+                }
+            }
+
+            // Groupe de champs
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-md;
+
+                .terms-link {
+                    color: $two;
+                    text-decoration: none;
+                    font-weight: 600;
+                    @include transition(color);
+
+                    &:hover {
+                        text-decoration: underline;
+                        color: lighten($two, 10%);
+                    }
+                }
+            }
+
+            // Wrapper reCAPTCHA
+            .captcha-wrapper {
+                @include flex-column;
+                padding: $spacing-lg;
+                background: $gray-50;
+                border-radius: $radius-lg;
+                border: 1px solid $gray-200;
+                font-family: $font-family-primary;
+
+                // Responsive pour reCAPTCHA
+                @media (max-width: $mobile) {
+                    transform: scale(0.85);
+                    transform-origin: center;
+                    padding: $spacing-md;
+                }
+            }
+
+            .form-navigation {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .nav-spacer {
+                    width: $spacing-xl;
+
+                    @media (max-width: $mobile) {
+                        width: $spacing-lg;
+                    }
+                }
+
+                .button {
+                    width: 100%;
+                    padding: $spacing-sm $spacing-xl;
+
+                    color: $dark;
+                    border: none;
+                    border-radius: $radius-lg;
+                    font-size: 1rem;
+                    font-family: 'Ubuntu', sans-serif;
+                    font-weight: 600;
+                    cursor: pointer;
+                    @include transition(all, 0.2s);
+                    @include card-shadow(2);
+                    position: relative;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: $spacing-sm;
+
+                    &--next {
+                        background: linear-gradient(135deg, $primary-color, $primary-hover);
+
+                        &:hover {
+                            background: linear-gradient(135deg, $primary-hover, $primary-active);
+                            transform: translateY(-1px);
+                            @include card-shadow(3);
+
+                            &::before {
+                                left: 100%;
+                            }
+                        }
+                    }
+
+                    &--back {
+                        background: linear-gradient(135deg, $secondary-color, $secondary-hover);
+
+                        &:hover {
+                            background: linear-gradient(135deg, $secondary-hover, $secondary-active);
+                            transform: translateY(-1px);
+                            color: $white;
+                            @include card-shadow(3);
+
+                            &::before {
+                                left: 100%;
+                            }
+                        }
+                    }
+
+                    &--submit {
+                        background: linear-gradient(135deg, $success-color, $primary-hover);
+
+                        &:hover {
+                            background: linear-gradient(135deg, $success-hover, $secondary-active);
+                            transform: translateY(-1px);
+                            @include card-shadow(3);
+
+                            &::before {
+                                left: 100%;
+                            }
+                        }
+                    }
+
+                    // Effet de brillance
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba($white, 0.2), transparent);
+                        @include transition(left, 0.5s);
+                    }
+
+
+
+                    &:active {
+                        transform: translateY(0);
+                        @include card-shadow(1);
+                    }
+
+                    &:focus {
+                        outline: none;
+                        box-shadow: 0 0 0 3px rgba($primary-color, 0.3);
+                    }
+
+                    // État désactivé
+                    &.disabled,
+                    &:disabled {
+                        background: $gray-300;
+                        color: $gray-500;
+                        cursor: not-allowed;
+                        transform: none;
+                        @include card-shadow(1);
+
+                        &:hover {
+                            background: $gray-300;
+                            transform: none;
+                            @include card-shadow(1);
+
+                            &::before {
+                                left: -100%;
+                            }
+                        }
+                    }
+
+                    @media (max-width: $mobile) {
+                        padding: $spacing-md $spacing-lg;
+                        font-size: 0.9375rem;
+                    }
+                }
+            }
+
+            // Messages d'erreur
+            .error-message,
+            .input-error-message {
+                font-size: 0.8125rem;
+                color: $error-color;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: $spacing-xs;
+                animation: slideInDown 0.3s ease-out;
+
+                &::before {
+                    content: '⚠';
+                    font-size: 0.75rem;
+                }
+            }
+
+            // Lien de connexion
+            .signup-link {
+                text-align: center;
+                margin-top: $spacing-xl;
+
+                p {
+                    margin: 0;
+                    font-size: 0.9375rem;
+                    color: $gray-600;
+                }
+
+                .link {
+                    color: $two;
+                    text-decoration: none;
+                    font-weight: 600;
+                    @include transition(color);
+
+                    &:hover {
+                        color: $three;
+                        text-decoration: underline;
+                    }
+
+                    &:focus {
+                        outline: 2px solid $primary-color;
+                        outline-offset: 2px;
+                        border-radius: $radius-sm;
+                    }
+                }
+            }
+        }
+    }
+}

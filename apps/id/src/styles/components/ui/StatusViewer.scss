@@ -1,0 +1,275 @@
+@import '../../fonts';
+@import '../../mixins';
+@import '../../variables';
+
+.status-viewer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.status-progress-container {
+    display: flex;
+    gap: 4px;
+    padding: 16px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.status-progress-track {
+    flex: 1;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.status-progress-fill {
+    height: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: width 0.1s linear;
+}
+
+.status-viewer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.status-user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.status-close-btn {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border: none !important;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.2) !important;
+    }
+}
+
+.status-content-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.status-media-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.status-text-content {
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 80%;
+
+    &.bg-default {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+}
+
+.status-text {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    &.text-default {
+        color: white;
+    }
+}
+
+.status-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border: none !important;
+    padding: 16px !important;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+}
+
+.status-nav-prev {
+    left: 20px;
+}
+
+.status-nav-next {
+    right: 20px;
+}
+
+.status-nav-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.status-actions-container {
+    padding: 16px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.status-actions-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-views {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.status-views-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.status-action-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.status-action-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.status-action-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.status-pause-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+    .status-progress-container {
+        padding: 12px;
+    }
+
+    .status-viewer-header {
+        padding: 12px;
+    }
+
+    .status-nav-btn {
+        padding: 12px !important;
+
+        &.status-nav-prev {
+            left: 12px;
+        }
+
+        &.status-nav-next {
+            right: 12px;
+        }
+    }
+
+    .status-nav-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .status-text-content {
+        padding: 30px 20px;
+    }
+
+    .status-text {
+        font-size: 20px;
+    }
+
+    .status-actions-container {
+        padding: 12px;
+    }
+
+    .status-action-buttons {
+        gap: 12px;
+    }
+
+    .status-action-btn {
+        padding: 6px;
+    }
+
+    .status-action-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+// Animations
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.status-viewer-overlay {
+    animation: fadeIn 0.3s ease-out;
+}
+
+// Support tactile
+@media (pointer: coarse) {
+    .status-nav-btn {
+        padding: 20px !important;
+    }
+
+    .status-action-btn {
+        padding: 10px;
+    }
+}
